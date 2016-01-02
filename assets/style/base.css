@@ -1,0 +1,40 @@
+body, html {
+  font: normal 300 12px/1.4 'Roboto', sans-serif;
+  background: #0b0b0b url("/assets/img/background.svg") 0 0;
+  color: #cce5ec;
+  padding:10px;
+  margin:0;
+}
+
+.b-layout__head {
+  background: #18282b;
+  padding:10px;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:40px;
+  border:10px solid #0b0b0b;
+  border-bottom:none;
+}
+
+.b-layout__content {
+  background: #12181a;
+  padding:50px 10px;
+}
+
+.b-layout__foot {
+  background: #18282b;
+  padding:10px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:40px;
+  border:10px solid #0b0b0b;
+  border-top:none;
+}
+
+.b-heading__title {
+  font:normal 300 12px/1.4 'Roboto', sans-serif;
+}
