@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'DIN';
+  src: url('/font/DINWeb.eot');
+  src: url('/font/DINWeb.eot?#iefix') format('embedded-opentype'),
+  url('/font/DINWeb.woff') format('woff');
+}
+
+html {
+  font: normal 300 12px/1.4 'DIN', sans-serif;
+  background: #18282b url("/img/background.svg") 0 0;
+  color: #60def1;
+  padding:0;
+  margin:0;
+}
+
+body {
+  margin:0;
+  padding:0;
+}
+
+.b-layout__head {
+  padding:10px;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:40px;
+  background-color:rgb(18,24,26);
+}
+
+.b-layout__content {
+  padding:52px 0px;
+}
+
+.b-layout__foot {
+  padding:10px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:40px;
+  background-color:rgb(18,24,26);
+}
+
+.b-heading__title {
+  font:normal 300 12px/1.4 'DIN', sans-serif;
+  color: #fefedc;
+}
+
+.b-heading__title + .b-heading__title {
+  color: #eefbf3;
+}
+
+.b-post {
+  background-color: rgba(23,39,42,0.8);
+  padding: 20px;
+}
