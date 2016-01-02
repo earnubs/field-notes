@@ -5,10 +5,17 @@
   url('/font/DINWeb.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'DIN';
+  src: url('/font/DINWeb-Light.eot');
+  src: url('/font/DINWeb-Light.eot?#iefix') format('embedded-opentype'),
+  url('/font/DINWeb-Light.woff') format('woff');
+}
+
 html {
-  font: normal 300 12px/1.4 'DIN', sans-serif;
-  background: #18282b url("/img/background.svg") 0 0;
-  color: #60def1;
+  font: normal 300 16px/1.4 'DIN', sans-serif;
+  background: #efe9e0;
+  color: #222;
   padding:0;
   margin:0;
 }
@@ -16,6 +23,13 @@ html {
 body {
   margin:0;
   padding:0;
+}
+
+pre code {
+  display:block;
+  background-color:#fefefe;
+  font-size:12px;
+  padding:1em;
 }
 
 .b-layout__head {
@@ -29,29 +43,46 @@ body {
 }
 
 .b-layout__content {
-  padding:52px 0px;
+  padding:52px 40px;
 }
 
 .b-layout__foot {
-  padding:10px;
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  height:40px;
-  background-color:rgb(18,24,26);
+}
+
+a {
+  color: #60def1;
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
 }
 
 .b-heading__title {
-  font:normal 300 12px/1.4 'DIN', sans-serif;
-  color: #fefedc;
+  font:normal 300 24px/1.6 'DIN', sans-serif;
+  text-transform:uppercase;
+}
+
+.b-heading__title a:before {
+  content: '#';
 }
 
 .b-heading__title + .b-heading__title {
-  color: #eefbf3;
 }
 
 .b-post {
-  background-color: rgba(23,39,42,0.8);
-  padding: 20px;
+}
+
+.b-post__datetime {
+  font-size:13px;
+  position:relative;
+}
+
+.b-post__datetime:before {
+  content:'';
+  display:inline-block;
+  width:5px;
+  height:5px;
+  background-color: #ff7440;
+  margin:0 5px 1px 0;
 }

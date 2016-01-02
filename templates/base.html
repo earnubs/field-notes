@@ -1,8 +1,24 @@
 <!doctype html>
 <title>Hi {{ title }}</title>
 <meta charset="utf8">
-<h1>Field Notes</h1>
-{% block content %}
-{{ contents | safe }}
-{% endblock %}
+<link href="/css/all.css" rel="stylesheet">
+<div class="b-layout__head">
+</div>
+<div class="b-layout__content">
+  <h1 class="b-heading__title">Field Notes</h1>
+  {% block content %}
+  <div class="b-post">
+    <h1 class="b-heading__title"><a href="{{ link }}">{{ title }}</a></h2>
+    {{ contents | safe }}
+    {% if date%}
+    <div class="b-post__datetime">{{ moment(date, 'YYYY-MM-DD HH:mm').format("LLLL") }}</div>
+    {% endif %}
+    {% if modified %}
+    <div class="b-post__datetime">{{ moment(modified, 'YYYY-MM-DD HH:mm').format("LLLL") }}</div>
+    {% endif %}
+  </div>
+  {% endblock %}
+</div>
+<div class="b-layout__foot">
+</div>
 

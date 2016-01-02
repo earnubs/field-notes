@@ -4,8 +4,6 @@ var concat = require('gulp-concat');
 var del = require('del');
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
-var webserver = require('gulp-webserver');
-
 
 gulp.task('metalsmith', ['clean'], function (cb) {
   build(cb);
@@ -14,6 +12,11 @@ gulp.task('metalsmith', ['clean'], function (cb) {
 gulp.task('images', ['clean'], function() {
   return gulp.src('./assets/images/**')
   .pipe(gulp.dest('build/img/'));
+});
+
+gulp.task('fonts', ['clean'], function() {
+  return gulp.src('./assets/fonts/**')
+  .pipe(gulp.dest('build/font/'));
 });
 
 gulp.task('styles', ['clean'], function () {
@@ -30,15 +33,9 @@ gulp.task('clean', function () {
   return del(['build']);
 });
 
-gulp.task('webserver', function() {
-  gulp.src('build')
-  .pipe(webserver({
-    livereload: true,
-    directoryListing: true,
-    open: true
-  }));
+gulp.task('watch', ['build'], function() {
+  gulp.watch(['src/**/*', 'assets/**/*'], ['build']);
 });
 
-gulp.task('build', ['metalsmith', 'styles', 'images']);
+gulp.task('build', ['metalsmith', 'styles', 'images', 'fonts']);
 gulp.task('default', ['build']);
-gulp.task('www', ['build', 'webserver']);
