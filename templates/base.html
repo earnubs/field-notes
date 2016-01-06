@@ -3,20 +3,58 @@
 <meta charset="utf8">
 <link href="/css/all.css" rel="stylesheet">
 <div class="b-layout__head">
+
+  <div class="b-nav">
+    <a class="b-nav__item" href="/">
+      <svg class="svg-nav" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="13" height="11" viewBox="0 0 13 11" enable-background="new 0 0 13 11" xml:space="preserve">
+      <g stroke-meterlimit="10">
+      <polygon points="1,10.5 6,10.5 12,0.5 7,0.5 "/>
+      </g>
+      </svg>
+    </a>
+
+    <a class="b-nav__item" href="/posts">
+      <svg class="svg-nav" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="21" height="11" viewBox="0 0 21 11" enable-background="new 0 0 21 11" xml:space="preserve">
+      <g stroke-meterlimit="10">
+      <polygon points="1,10.5 6,10.5 12,0.5 7,0.5 "/>
+      <polygon points="9,10.5 14,10.5 20,0.5 15,0.5 "/>
+      </g>
+      </svg>
+    </a>
+
+    <a class="b-nav__item">
+      <svg class="svg-nav" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="29" height="11" viewBox="0 0 29 11" enable-background="new 0 0 29 11" xml:space="preserve">
+      <g stroke-meterlimit="10">
+      <polygon points="1,10.5 6,10.5 12,0.5 7,0.5 "/>
+      <polygon points="9,10.5 14,10.5 20,0.5 15,0.5 "/>
+      <polygon points="17,10.5 22,10.5 28,0.5 23,0.5 "/>
+      </g>
+      </svg>
+    </a>
+  </div>
 </div>
 <div class="b-layout__content">
-  <h1 class="b-heading__title">Field Notes</h1>
   {% block content %}
   <div class="b-post">
     <h1 class="b-heading__title"><a href="{{ link }}">{{ title }}</a></h2>
+    {% if publishedDate or modifiedDate %}
+    <div class="b-post__datetime">
+      {% if publishedDate %}
+      <div class="b-post__datetime_published">
+        Published: {{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+      </div>
+      {% endif %}
+      {% if modifiedDate %}
+      <div class="b-post__datetime_modified">
+        Last Modified: {{ moment(modifiedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+      </div>
+        {% endif %}
+    </div>
+    {% endif %}
     {{ contents | safe }}
-    {% if date%}
-    <div class="b-post__datetime">{{ moment(date, 'YYYY-MM-DD HH:mm').format("LLLL") }}</div>
-    {% endif %}
-    {% if modified %}
-    <div class="b-post__datetime">{{ moment(modified, 'YYYY-MM-DD HH:mm').format("LLLL") }}</div>
-    {% endif %}
-  </div>
+    <div class="b-post__wordcount">
+      {{ wordCount }} words
+    </div>
   {% endblock %}
 </div>
 <div class="b-layout__foot">

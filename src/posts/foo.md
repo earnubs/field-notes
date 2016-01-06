@@ -1,7 +1,7 @@
 ---
 title: foo
-date: 2016-01-01T23:19
-modified: 2016-01-02T22:45
+publishedDate: 2016-01-01T23:19
+modifiedDate: 2016-01-02T22:45
 ---
 
 Praesent molestie justo nec velit mattis, non tempor nisl blandit. Duis aliquam tortor sed fringilla ullamcorper. Duis sapien risus, mollis sit amet volutpat vitae, volutpat sit amet odio. Suspendisse elementum nisi mattis odio blandit sollicitudin. Phasellus interdum sed sem ut lacinia. Suspendisse nunc metus, consequat quis purus ut, fermentum ultrices turpis. In eu commodo diam. Donec quis metus libero. Integer eget gravida nisi.

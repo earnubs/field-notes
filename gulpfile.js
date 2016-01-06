@@ -34,7 +34,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('watch', ['build'], function() {
-  gulp.watch(['src/**/*', 'assets/**/*'], ['build']);
+  gulp.watch(['src/**/*', 'assets/**/*', 'templates/**/*'], ['build']);
 });
 
 gulp.task('build', ['metalsmith', 'styles', 'images', 'fonts']);

@@ -3,8 +3,5 @@ title: Hello World!
 date: 01-01-2016
 ---
 
-Hello World! This is metalsmith.
+This is the weblog of Stephen Stewart, a Front End Engineer working for ...
 
-"I am a quote"
-
-_I am some markdown_

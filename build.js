@@ -1,5 +1,6 @@
 var branch = require('metalsmith-branch');
 var collections = require('metalsmith-collections');
+var drafts = require('metalsmith-drafts');
 var excerpts = require('metalsmith-excerpts');
 var layouts = require('metalsmith-layouts');
 var markdown = require('metalsmith-markdown');
@@ -7,9 +8,10 @@ var metalsmith = require('metalsmith');
 var moment = require('moment');
 var nunjucks = require('nunjucks');
 var permalinks = require('metalsmith-permalinks');
-var serve = require('metalsmith-serve');
+var prism = require('metalsmith-prism');
 var typography = require('metalsmith-typography');
-var watch = require('metalsmith-watch');
+var hyphenate = require('metalsmith-hyphenate');
+var wc = require("metalsmith-word-count");
 
 nunjucks.configure('./templates', {watch: false});
 
@@ -25,8 +27,14 @@ module.exports = function(callback) {
   .source('./src')
   .destination('./build')
   .ignore('*.swp')
-  .use(markdown())
+  .use(drafts())
+  .use(markdown( { langPrefix: 'language-' } ))
+  .use(prism())
   .use(typography())
+  .use(wc())
+  .use(hyphenate({
+    elements: ['p', 'blockquote']
+  }))
   .use(excerpts())
   .use(
     collections({
