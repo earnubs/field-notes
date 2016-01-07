@@ -1,5 +1,6 @@
 var branch = require('metalsmith-branch');
 var collections = require('metalsmith-collections');
+var config = require('./config.json');
 var drafts = require('metalsmith-drafts');
 var excerpts = require('metalsmith-excerpts');
 var layouts = require('metalsmith-layouts');
@@ -11,19 +12,15 @@ var permalinks = require('metalsmith-permalinks');
 var prism = require('metalsmith-prism');
 var typography = require('metalsmith-typography');
 var hyphenate = require('metalsmith-hyphenate');
-var wc = require("metalsmith-word-count");
 
 nunjucks.configure('./templates', {watch: false});
 
 module.exports = function(callback) {
   return metalsmith(__dirname)
-  .clean(false) // leave for gulp
   .metadata({
-    site: {
-      title: 'Field Notes',
-      url: 'http://carisenda.com'
-    }
+    site: config
   })
+  .clean(false) // leave for gulp
   .source('./src')
   .destination('./build')
   .ignore('*.swp')
@@ -31,7 +28,6 @@ module.exports = function(callback) {
   .use(markdown( { langPrefix: 'language-' } ))
   .use(prism())
   .use(typography())
-  .use(wc())
   .use(hyphenate({
     elements: ['p', 'blockquote']
   }))
@@ -41,11 +37,7 @@ module.exports = function(callback) {
       posts: {
         pattern: 'posts/**.html',
         sortBy: 'date',
-        reverse: true,
-        metadata: {
-          name: 'Posts',
-          description: 'Posts for ...'
-        }
+        reverse: true
       }
     })
   )

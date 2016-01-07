@@ -1,0 +1,22 @@
+<div class="b-post">
+  {% if link %}
+  <h1 class="b-heading__title"><a href="/{{ link }}">{{ title }}</a></h1>
+  {% else %}
+  <h1 class="b-heading__title">{{ title }}</h1>
+  {% endif %}
+  {% if publishedDate or modifiedDate %}
+  <div class="b-post__datetime">
+    {% if publishedDate %}
+    <div class="b-post__datetime_published">
+      Published: {{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+    </div>
+    {% endif %}
+    {% if modifiedDate %}
+    <div class="b-post__datetime_modified">
+      Last Modified: {{ moment(modifiedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+  {{ contents | safe }}
+</div>

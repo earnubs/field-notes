@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
-<h1>Posts</h1>
+{% set active = 'post' %}
 {% block content %}
-<h1>Recent Posts</h1>
 {% for post in collections.posts %}
-<h1><a href="/{{ post.path }}">{{ post.title }}</a></h1>
-{{ post.excerpt | safe }}
+{% set title = post.title %}
+{% set contents = post.excerpt %}
+{% set link = post.path %}
+{% set publishedDate = post.publishedDate %}
+{% include "_post.html" %}
 {% endfor %}
 {% endblock %}

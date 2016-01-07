@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% set active = 'home' %}
+{% block content %}
+<div class="b-post">
+  <h1 class="b-heading__title">{{ title }}</h1>
+  {{ contents | safe }}
+</div>
+{% endblock %}
