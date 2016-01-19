@@ -22,6 +22,7 @@
     "metalsmith-permalinks": "^0.4.1",
     "metalsmith-prism": "^2.1.1",
     "metalsmith-serve": "0.0.6",
+    "metalsmith-tags": "^1.2.0",
     "metalsmith-typography": "^0.1.1",
     "metalsmith-watch": "^1.0.1",
     "metalsmith-word-count": "0.0.4",

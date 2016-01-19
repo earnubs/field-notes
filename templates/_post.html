@@ -8,7 +8,7 @@
   <div class="b-post__datetime">
     {% if publishedDate %}
     <div class="b-post__datetime_published">
-      Published: {{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+      {{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
     </div>
     {% endif %}
     {% if modifiedDate %}
@@ -19,4 +19,7 @@
   </div>
   {% endif %}
   {{ contents | safe }}
+  {% for tag in tags %}
+  <a class="b-tag" href="/tags/{{tag|urlencode}}/">{{tag}}</a>
+  {% endfor %}
 </div>

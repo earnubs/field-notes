@@ -10,6 +10,7 @@ var moment = require('moment');
 var nunjucks = require('nunjucks');
 var permalinks = require('metalsmith-permalinks');
 var prism = require('metalsmith-prism');
+var tags = require('metalsmith-tags');
 var typography = require('metalsmith-typography');
 var hyphenate = require('metalsmith-hyphenate');
 
@@ -32,6 +33,11 @@ module.exports = function(callback) {
     elements: ['p', 'blockquote']
   }))
   .use(excerpts())
+  .use(tags({
+    handle: 'tags',
+    path: 'tags/:tag.html',
+    layout: './tags.html'
+  }))
   .use(
     collections({
       posts: {
@@ -63,17 +69,6 @@ module.exports = function(callback) {
       moment: moment
     })
   )
-  //.use(
-  //  serve({
-  //    port: 8080,
-  //    verbose: true
-  //  })
-  //)
-  //.use(
-  //  watch({
-  //    pattern: '**/*'
-  //  })
-  //)
   .build(function(err) {
     if (err) {
       throw new Error(err);
