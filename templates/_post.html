@@ -1,3 +1,4 @@
+<div class="b-hero" data-src="{{ hero }}"></div>
 <div class="b-post">
   {% if link %}
   <h1 class="b-heading__title"><a href="/{{ link }}">{{ title }}</a></h1>
@@ -18,8 +19,12 @@
     {% endif %}
   </div>
   {% endif %}
+  {% if hero %}
+  {% endif %}
   {{ contents | safe }}
-  {% for tag in tags %}
-  <a class="b-tag" href="/tags/{{tag|urlencode}}/">{{tag}}</a>
-  {% endfor %}
+  <div class="b-tags">
+    {% for tag in tags %}
+    <a class="b-tags__tag" href="/tags/{{tag|urlencode}}/">{{tag}}</a>
+    {% endfor %}
+  </div>
 </div>

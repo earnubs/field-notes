@@ -34,16 +34,10 @@
 </div>
 <div class="b-layout__content">
   
-
-
-
-
-
-
-<div class="b-hero" data-src=""></div>
+  <div class="b-hero" data-src=""></div>
 <div class="b-post">
   
-  <h1 class="b-heading__title"><a href="/posts/karma-test-run-as-gulp-task">Karma Test Run as Gulp Task</a></h1>
+  <h1 class="b-heading__title">Karma Test Run as Gulp Task</h1>
   
   
   <div class="b-post__datetime">
@@ -57,70 +51,30 @@
   
   
   <p>This is my gulp task for run­ning JS unit tests through Karma, us­ing the <code>run_complete</code> event gives more ac­cu­rate tim­ings in gulp logs.</p>
+<pre><code> gulp.task('karma', function(done) {
+   var server = new Server({
+   ¦ configFile: __dirname + '/karma.conf.js',
+   ¦ singleRun: true
+   });
+
+   server.on('run_complete', function() {
+   ¦ done();
+   });
+   server.start();
+ });
+</code></pre>
   <div class="b-tags">
+    
+    <a class="b-tags__tag" href="/tags/javascript/">javascript</a>
+    
+    <a class="b-tags__tag" href="/tags/gulp/">gulp</a>
+    
+    <a class="b-tags__tag" href="/tags/karma/">karma</a>
     
   </div>
 </div>
 
-
-
-
-
-
-
-<div class="b-hero" data-src=""></div>
-<div class="b-post">
   
-  <h1 class="b-heading__title"><a href="/posts/foo">foo</a></h1>
-  
-  
-  <div class="b-post__datetime">
-    
-    <div class="b-post__datetime_published">
-      Friday, January 1, 2016 11:19 PM
-    </div>
-    
-    
-  </div>
-  
-  
-  <p>Prae&#xAD;sent mo&#xAD;lestie justo nec velit mat&#xAD;tis, non tem&#xAD;por nisl blandit. Duis ali&#xAD;quam tor&#xAD;tor sed fringilla ul&#xAD;lam&#xAD;cor&#xAD;per. Duis sapien risus, mol&#xAD;lis sit amet vo&#xAD;lut&#xAD;pat vi&#xAD;tae, vo&#xAD;lut&#xAD;pat sit amet odio. Sus&#xAD;pendisse el&#xAD;e&#xAD;men&#xAD;tum nisi mat&#xAD;tis odio blandit sol&#xAD;lic&#xAD;i&#xAD;tudin. Phasel&#xAD;lus in&#xAD;ter&#xAD;dum sed sem ut lacinia. Sus&#xAD;pendisse nunc me&#xAD;tus, con&#xAD;se&#xAD;quat quis pu&#xAD;rus ut, fer&#xAD;men&#xAD;tum ul&#xAD;tri&#xAD;ces turpis. In eu com&#xAD;modo diam. Donec quis me&#xAD;tus libero. In&#xAD;te&#xAD;ger eget gravida nisi.</p>
-  <div class="b-tags">
-    
-  </div>
-</div>
-
-
-
-
-
-
-
-<div class="b-hero" data-src="foo.png"></div>
-<div class="b-post">
-  
-  <h1 class="b-heading__title"><a href="/posts/not-enough-random-bytes-available">Not enough random bytes available</a></h1>
-  
-  
-  <div class="b-post__datetime">
-    
-    <div class="b-post__datetime_published">
-      Monday, January 4, 2016 8:16 PM
-    </div>
-    
-    
-  </div>
-  
-  
-  
-  <p>Hello.</p>
-  <div class="b-tags">
-    
-  </div>
-</div>
-
-
-
 </div>
 <div class="b-layout__foot">
 </div>

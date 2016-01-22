@@ -27,11 +27,17 @@ module.exports = function(callback) {
   .ignore('*.swp')
   .use(drafts())
   .use(markdown( { langPrefix: 'language-' } ))
-  .use(prism())
-  .use(typography())
   .use(hyphenate({
     elements: ['p', 'blockquote']
   }))
+  .use(prism())
+  .use(typography())
+  /**
+  .use(function(files, foo, done) {
+    console.log(files['posts/entropy-haveged.html'].contents.toString('ascii'));
+    done();
+  })
+  **/
   .use(excerpts())
   .use(tags({
     handle: 'tags',

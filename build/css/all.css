@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
 @font-face {
   font-family: 'DIN';
   font-weight: 300;
@@ -74,7 +76,7 @@
 
 
 :root {
-  font: normal 300 19px/1.4 'DIN', sans-serif;
+  font: normal 400 16px/1.4 'DIN', sans-serif;
   background: #fc673e url('/img/hex-bg.svg');
   background-size:15px;
   color: #12191a;
@@ -87,11 +89,19 @@ body {
   padding:0;
 }
 
-pre code {
+code {
+  font-family: 'Inconsolata', monospace;
+  border:1px solid rgba(24, 40, 43, 0.2);
+  background-color: #fc673e;
+  padding: 0 0.3em 2px;
+  border-radius: 3px;
+}
+
+pre > code {
+  background-color: rgba(24,40,42,1);
+  font-size:13px;
+  color:#cce5ec;
   display:block;
-  background-color:#18282b;
-  color:#fffedf;
-  font-size:12px;
   padding:1em;
 }
 
@@ -106,7 +116,7 @@ pre code {
 }
 
 .b-layout__content {
-  padding:52px 40px;
+  padding:52px 0px;
 }
 
 .b-layout__foot {
@@ -135,13 +145,7 @@ p:last-child {
   color:#18282b;
   margin:0;
   padding:0;
-}
-
-.b-heading__title_huge {
-}
-
-
-.b-heading__title + .b-heading__title {
+  text-shadow: 0 4px rgba(0,0,0,0.1);
 }
 
 .b-post {
@@ -157,9 +161,7 @@ p:last-child {
 }
 
 .b-post__datetime {
-  font-size:13px;
-  position:relative;
-  font-weight:500;
+  font-size:11px;
   text-transform:uppercase;
   margin-bottom:1rem;
 }
@@ -168,8 +170,25 @@ p:last-child {
   font-size:11px;
 }
 
-.b-tag {
-  padding: 0.3em 0.9em;
-  background-color:rgba(255,255,255,0.1);
-  border-radius:4px;
+.b-tags {
+  margin:2em 0;
+}
+
+.b-tags__tag {
+  line-height:1;
+  font-weight:200;
+  padding: 0.3em 0.9em 0.2em;
+  border-radius:3px;
+  border:1px solid rgba(24, 40, 43, 0.2);
+  background-color: #fc673e;
+  text-transform:uppercase;
+}
+
+.b-tags__tag::before {
+  content:'#'
+}
+
+.b-hero {
+  height:100px;
+  background-color:rgba(24, 40, 43, 0.7);
 }
