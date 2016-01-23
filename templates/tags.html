@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Posts for {{tag}}</h1>
-
+<div class="b-post">
+<h1 class="b-heading__title">#{{ tag }}</h1>
+</div>
 {% for tag in pagination.files %}
-{{ tag.title }}
-{{ tag.content }}
-{{ tag.link }}
+{{ tag.contents }}
 {% endfor %}
 
 {% endblock %}

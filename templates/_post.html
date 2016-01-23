@@ -1,4 +1,8 @@
-<div class="b-hero" data-src="{{ hero }}"></div>
+{% if hero %}
+<div class="b-hero">
+  <img src="/img/{{ hero }}" />
+</div>
+{% endif %}
 <div class="b-post">
   {% if link %}
   <h1 class="b-heading__title"><a href="/{{ link }}">{{ title }}</a></h1>
@@ -18,8 +22,6 @@
     </div>
     {% endif %}
   </div>
-  {% endif %}
-  {% if hero %}
   {% endif %}
   {{ contents | safe }}
   <div class="b-tags">

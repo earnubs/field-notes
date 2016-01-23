@@ -2,10 +2,7 @@
 title: Not enough random bytes available
 publishedDate: 2016-01-04T20:16
 tags: linux,cloud,containers
-hero: foo.png
 ---
-
-Hello.
 
 ```
 Not enough random bytes available.  Please do some other work to give

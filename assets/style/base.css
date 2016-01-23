@@ -102,6 +102,7 @@ pre > code {
   color:#cce5ec;
   display:block;
   padding:1em;
+  box-shadow: 0 3px rgba(0,0,0,0.1);
 }
 
 .b-layout__head {
@@ -188,6 +189,12 @@ p:last-child {
 }
 
 .b-hero {
-  height:100px;
-  background-color:rgba(24, 40, 43, 0.7);
+  margin: 0 auto;
+}
+
+.b-hero > img {
+  opacity:0.6;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
 }
