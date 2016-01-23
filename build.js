@@ -38,11 +38,13 @@ module.exports = function(callback) {
     path: 'tags/:tag.html',
     layout: './tags.html'
   }))
+  /**
   .use(function(files, foo, done) {
     //console.log(files['posts/entropy-haveged.html'].contents.toString('ascii'));
     console.log(files['tags/javascript.html'].pagination.files);
     done();
   })
+  **/
   .use(
     collections({
       posts: {
