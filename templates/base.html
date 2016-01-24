@@ -2,41 +2,23 @@
 <title>{{ site.title }}</title>
 <meta charset="utf8">
 <link href="/css/all.css" rel="stylesheet">
-<div class="b-layout__head">
-  <div class="b-nav">
-    <div class="b-nav__item {% if active == 'home' %}b-nav__item_active{% endif %}">
-      <svg class="svg-nav" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="13" height="11" viewBox="0 0 13 11" enable-background="new 0 0 13 11" xml:space="preserve">
-      <g stroke-meterlimit="10">
-      <polygon points="1,10.5 6,10.5 12,0.5 7,0.5 "/>
-      </g>
-      </svg>
-    </div>
-
-    <div class="b-nav__item {% if active != 'home' and active != 'page' %}b-nav__item_active{% endif %}">
-      <svg class="svg-nav" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="21" height="11" viewBox="0 0 21 11" enable-background="new 0 0 21 11" xml:space="preserve">
-      <g stroke-meterlimit="10">
-      <polygon points="1,10.5 6,10.5 12,0.5 7,0.5 "/>
-      <polygon points="9,10.5 14,10.5 20,0.5 15,0.5 "/>
-      </g>
-      </svg>
-    </div>
-
-    <div class="b-nav__item {% if active == 'page' %}b-nav__item_active{% endif %}">
-      <svg class="svg-nav" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="29" height="11" viewBox="0 0 29 11" enable-background="new 0 0 29 11" xml:space="preserve">
-      <g stroke-meterlimit="10">
-      <polygon points="1,10.5 6,10.5 12,0.5 7,0.5 "/>
-      <polygon points="9,10.5 14,10.5 20,0.5 15,0.5 "/>
-      <polygon points="17,10.5 22,10.5 28,0.5 23,0.5 "/>
-      </g>
-      </svg>
-    </div>
-  </div>
-</div>
 <div class="b-layout__content">
   {% block content %}
   {% include "_post.html" %}
+<div class="b-post">
+  {% if path %}
+  <h1 class="b-heading__title"><a href="/{{ path }}">{{ title }}</a></h1>
+  {% else %}
+  <h1 class="b-heading__title">{{ title }}</h1>
+  {% endif %}
+  {% if publishedDate %}
+  <div class="b-post__datetime">
+    <div class="b-post__datetime_published">
+      {{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+    </div>
+  </div>
+  {% endif %}
+  {{ contents | safe }}
+</div>
   {% endblock %}
 </div>
-<div class="b-layout__foot">
-</div>
-

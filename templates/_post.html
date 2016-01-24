@@ -1,32 +1,15 @@
-{% if hero %}
-<div class="b-hero">
-  <img src="/img/{{ hero }}" />
-</div>
-{% endif %}
 <div class="b-post">
-  {% if link %}
-  <h1 class="b-heading__title"><a href="/{{ link }}">{{ title }}</a></h1>
+  {% if post.path %}
+  <h1 class="b-heading__title"><a href="/{{ post.path }}">{{ post.title }}</a></h1>
   {% else %}
-  <h1 class="b-heading__title">{{ title }}</h1>
+  <h1 class="b-heading__title">{{ post.title }}</h1>
   {% endif %}
-  {% if publishedDate or modifiedDate %}
+  {% if post.publishedDate %}
   <div class="b-post__datetime">
-    {% if publishedDate %}
     <div class="b-post__datetime_published">
-      {{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+      {{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
     </div>
-    {% endif %}
-    {% if modifiedDate %}
-    <div class="b-post__datetime_modified">
-      Last Modified: {{ moment(modifiedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
-    </div>
-    {% endif %}
   </div>
   {% endif %}
-  {{ contents | safe }}
-  <div class="b-tags">
-    {% for tag in tags %}
-    <a class="b-tags__tag" href="/tags/{{tag|urlencode}}/">{{tag}}</a>
-    {% endfor %}
-  </div>
+  {{ post.contents | safe }}
 </div>

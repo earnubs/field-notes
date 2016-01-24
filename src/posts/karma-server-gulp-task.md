@@ -6,7 +6,7 @@ tags: javascript, gulp, karma
 
 This is my gulp task for running JS unit tests through Karma, using the `run_complete` event gives more accurate timings in gulp logs.
 
-```
+```js
  gulp.task('karma', function(done) {
    var server = new Server({
    ¦ configFile: __dirname + '/karma.conf.js',
