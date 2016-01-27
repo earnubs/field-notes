@@ -9,12 +9,12 @@ This is my gulp task for running JS unit tests through Karma, using the `run_com
 ```js
  gulp.task('karma', function(done) {
    var server = new Server({
-   ¦ configFile: __dirname + '/karma.conf.js',
-   ¦ singleRun: true
+     configFile: __dirname + '/karma.conf.js',
+     singleRun: true
    });
 
    server.on('run_complete', function() {
-   ¦ done();
+     done();
    });
    server.start();
  });
