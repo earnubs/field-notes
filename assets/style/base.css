@@ -108,7 +108,6 @@ p:last-child {
 .b-post__datetime {
   font-size:11px;
   text-transform:uppercase;
-  padding:5px;
   margin-bottom:1rem;
 }
 
@@ -119,4 +118,15 @@ p:last-child {
 
 .b-tags__tag {
   text-transform:uppercase;
+}
+
+.b-metadata {
+  font-size:11px;
+  text-transform:uppercase;
+  padding:1rem 0;
+  margin:2rem 0 0;
+}
+
+.b-metadata p {
+  margin:0;
 }
