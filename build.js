@@ -10,7 +10,7 @@ var moment = require('moment');
 var nunjucks = require('nunjucks');
 var permalinks = require('metalsmith-permalinks');
 var typography = require('metalsmith-typography');
-var hyphenate = require('metalsmith-hyphenate');
+var path = require('path');
 
 nunjucks.configure('./templates', {watch: false});
 
@@ -23,12 +23,19 @@ module.exports = function(callback) {
   .source('./src')
   .destination('./build')
   .ignore(['.*.swp'])
+  .use(function(files, metalsmith, done) {
+    Object.keys(files).forEach(function(file) {
+      var metadata = metalsmith.metadata();
+      // XXX test for path strings, else path will fail
+      var srcPath = path.relative(__dirname, metalsmith.source());
+      var filePath = path.join(srcPath, file);
+      files[file].github = metadata.site.github + filePath;
+    });
+    done();
+  })
   .use(drafts())
   .use(metallic())
   .use(markdown())
-  .use(hyphenate({
-    elements: ['p', 'blockquote']
-  }))
   .use(typography())
   .use(
     collections({
@@ -40,14 +47,14 @@ module.exports = function(callback) {
     })
   )
   .use(
-    branch('posts/**.html')
+    branch('posts/**.md')
     .use(permalinks({
       pattern: 'posts/:title',
       relative: false
     }))
   )
   .use(
-    branch(['!posts/**.html', '!index.md'])
+    branch(['!posts/**.md', '!index.md'])
     .use(permalinks({
       relative: false
     }))

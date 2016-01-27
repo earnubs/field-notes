@@ -4,12 +4,8 @@
   {% else %}
   <h1 class="b-heading__title">{{ post.title }}</h1>
   {% endif %}
-  {% if post.publishedDate %}
-  <div class="b-post__datetime">
-    <div class="b-post__datetime_published">
-      {{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
-    </div>
-  </div>
-  {% endif %}
   {{ post.contents | safe }}
+  <div class="b-metadata">
+    <p>{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+  </div>
 </div>

@@ -1,10 +1,10 @@
 <!doctype html>
-<title>{{ site.title }}</title>
+<title>{{ site.title }}{% if title %}| {{ title }}{% endif %}</title>
 <meta charset="utf8">
+<link rel="icon" type="image/png" href="/img/favicon.png">
 <link href="/css/all.css" rel="stylesheet">
 <div class="b-layout__content">
   {% block content %}
-  {% include "_post.html" %}
 <div class="b-post">
   {% if path %}
   <h1 class="b-heading__title"><a href="/{{ path }}">{{ title }}</a></h1>
@@ -19,6 +19,12 @@
   </div>
   {% endif %}
   {{ contents | safe }}
+  <div class="b-metadata">
+    <p>{{ site.author }}
+    <p>{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+    <p><a href="{{ site.url }}{{ post.path }}">{{ site.url }}{{ post.path }}</a>
+    <p><a href="{{ github }}">{{ github }}</a>
+  </div>
 </div>
   {% endblock %}
 </div>

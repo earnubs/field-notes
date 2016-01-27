@@ -1,64 +1,48 @@
 <!doctype html>
 <title>Field Notes</title>
 <meta charset="utf8">
+<link rel="icon" type="image/png" href="/img/favicon.png">
 <link href="/css/all.css" rel="stylesheet">
 <div class="b-layout__content">
   
 
 <div class="b-post">
   
-  <h1 class="b-heading__title"><a href="/posts/karma-test-run-as-gulp-task">Karma Test Run as Gulp Task</a></h1>
+  <h1 class="b-heading__title"><a href="/posts/karma-server-gulp-task">Karma Test Run as Gulp Task</a></h1>
   
-  
-  <div class="b-post__datetime">
-    <div class="b-post__datetime_published">
-      Friday, January 22, 2016 11:04 AM
-    </div>
-  </div>
-  
-  <p>This is my gulp task for run­ning JS unit tests through Karma, us­ing the <code>run_complete</code> event gives more ac­cu­rate tim­ings in gulp logs.</p>
+  <p>This is my gulp task for running JS unit tests through Karma, using the <code>run_complete</code> event gives more accurate timings in gulp logs.</p>
 <pre><code class="hljs js">gulp.task(<span class="hljs-string">'karma'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(done)</span> </span>{
    <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server({
-   ¦ configFile: __dirname + <span class="hljs-string">'/karma.conf.js'</span>,
-   ¦ singleRun: <span class="hljs-literal">true</span>
+     configFile: __dirname + <span class="hljs-string">'/karma.conf.js'</span>,
+     singleRun: <span class="hljs-literal">true</span>
    });
 
    server.on(<span class="hljs-string">'run_complete'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-   ¦ done();
+     done();
    });
    server.start();
  });</code></pre>
-</div>
-
-
-<div class="b-post">
-  
-  <h1 class="b-heading__title"><a href="/posts"></a></h1>
-  
-  
-  
-</div>
-
-
-<div class="b-post">
-  
-  <h1 class="b-heading__title"><a href="/posts/not-enough-random-bytes-available">Not enough random bytes available</a></h1>
-  
-  
-  <div class="b-post__datetime">
-    <div class="b-post__datetime_published">
-      Monday, January 4, 2016 8:16 PM
-    </div>
+  <div class="b-metadata">
+    <p>Friday, January 22, 2016 11:04 AM
   </div>
+</div>
+
+
+<div class="b-post">
+  
+  <h1 class="b-heading__title"><a href="/posts/entropy-haveged">Not enough random bytes available</a></h1>
   
   <pre><code class="hljs">Not enough <span class="hljs-built_in">random</span> <span class="hljs-keyword">bytes</span> available.  Please <span class="hljs-built_in">do</span> some other work <span class="hljs-built_in">to</span> give
 <span class="hljs-operator">the</span> OS <span class="hljs-operator">a</span> chance <span class="hljs-built_in">to</span> collect more entropy!  (Need <span class="hljs-number">187</span> more <span class="hljs-keyword">bytes</span>)</code></pre>
 
-<p>Head­less con­tain­ers/​servers tend to de­velop low en­tropy — not enough mouse wig­gling
-to gen­er­ate ran­dom­ness — which may pre­sent you with the above mes­sage. To fix this
-con­sider in­stalling the <a href="http://www.issihosts.com/haveged/">haveged entropy daemon</a>, a <nobr>easy-to</nobr>-use, un­pre­dictable
-ran­dom num­ber gen­er­a­tor:</p>
+<p>Headless containers/servers tend to develop low entropy — not enough mouse wiggling
+to generate randomness — which may present you with the above message. To fix this
+consider installing the <a href="http://www.issihosts.com/haveged/">haveged entropy daemon</a>, a <nobr>easy-to</nobr>-use, unpredictable
+random number generator:</p>
 <pre><code class="hljs">apt <span class="hljs-keyword">install</span> haveged</code></pre>
+  <div class="b-metadata">
+    <p>Monday, January 4, 2016 8:16 PM
+  </div>
 </div>
 
 
