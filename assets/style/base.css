@@ -44,7 +44,7 @@
   font: normal 400 14px/1.4 'DIN', sans-serif;
   background: #fc673e url('/img/hex-bg.svg');
   background-size:15px;
-  color: #12191a;
+  color: #002b36;
   padding:60px 0 0 0;
   margin:0;
 }
@@ -76,7 +76,7 @@ pre > code {
 }
 
 a {
-  color: #12191a;
+  color:#002b36;
   text-decoration:none;
 }
 
@@ -99,7 +99,6 @@ p:last-child {
 .b-heading__title {
   font:normal 500 64px/64px 'DIN', sans-serif;
   text-transform:uppercase;
-  color:#18282b;
   margin:0 0 1rem;
   padding:0;
   text-shadow: 0 4px rgba(0,0,0,0.1);
@@ -123,8 +122,7 @@ p:last-child {
 .b-metadata {
   font-size:11px;
   text-transform:uppercase;
-  padding:1rem 0;
-  margin:2rem 0 0;
+  margin:1rem 0 0;
 }
 
 .b-metadata p {
