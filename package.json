@@ -5,9 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "git@github.com:earnubs/field-notes.git"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:earnubs/field-notes.git"
   },
   "keywords": [],
   "author": "Stephen Stewart <stephen.stewart@carisenda.com>",
@@ -18,6 +18,8 @@
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-postcss": "^6.0.1",
+    "html-minifier": "^1.1.1",
+    "js-beautify": "^1.5.10",
     "metalsmith": "^2.1.0",
     "metalsmith-branch": "0.0.4",
     "metalsmith-collections": "^0.7.0",

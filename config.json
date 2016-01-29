@@ -1,6 +1,7 @@
 {
   "title": "Field Notes",
-  "author": "Stephen Stewart",
+  "author": "Stephen Stewart <stephen.stewart@carisenda.com>",
+  "email": "stephen.stewart@carisenda.com",
   "url": "https://carisenda.com/",
   "repo": "git@github.com:earnubs/field-notes.git",
   "github": "https://github.com/earnubs/field-notes/tree/master/"

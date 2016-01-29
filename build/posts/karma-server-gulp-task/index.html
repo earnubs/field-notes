@@ -1,39 +1,27 @@
 <!doctype html>
 <title>Field Notes| Karma Test Run as Gulp Task</title>
-<meta charset="utf8">
-<link rel="icon" type="image/png" href="/img/favicon.png">
-<link href="/css/all.css" rel="stylesheet">
-<div class="b-layout__content">
-  
-<div class="b-post">
-  
-  <h1 class="b-heading__title"><a href="/posts/karma-server-gulp-task">Karma Test Run as Gulp Task</a></h1>
-  
-  
-  <div class="b-post__datetime">
-    <div class="b-post__datetime_published">
-      Friday, January 22, 2016 11:04 AM
-    </div>
-  </div>
-  
-  <p>This is my gulp task for running JS unit tests through Karma, using the <code>run_complete</code> event gives more accurate timings in gulp logs.</p>
-<pre><code class="hljs js">gulp.task(<span class="hljs-string">'karma'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(done)</span> </span>{
-   <span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> Server({
-     configFile: __dirname + <span class="hljs-string">'/karma.conf.js'</span>,
-     singleRun: <span class="hljs-literal">true</span>
+<meta charset=utf8>
+<link rel=icon type=image/png href=/img/favicon.png>
+<link href=/css/all.css rel=stylesheet>
+<div class=b-layout__content>
+  <div class=b-post>
+    <h1 class=b-heading__title><a href=/posts/karma-server-gulp-task>Karma Test Run as Gulp Task</a></h1>
+    <p>This is my gulp task for running JS unit tests through Karma, using the <code>run_complete</code> event gives more accurate timings in gulp logs.</p>
+    <pre><code class="hljs js">gulp.task(<span class=hljs-string>'karma'</span>, <span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(done)</span> </span>{
+   <span class=hljs-keyword>var</span> server = <span class=hljs-keyword>new</span> Server({
+     configFile: __dirname + <span class=hljs-string>'/karma.conf.js'</span>,
+     singleRun: <span class=hljs-literal>true</span>
    });
 
-   server.on(<span class="hljs-string">'run_complete'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+   server.on(<span class=hljs-string>'run_complete'</span>, <span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
      done();
    });
    server.start();
  });</code></pre>
-  <div class="b-metadata">
-    <p>Stephen Stewart
-    <p>Friday, January 22, 2016 11:04 AM
-    <p><a href="https://carisenda.com/">https://carisenda.com/</a>
-    <p><a href="https://github.com/earnubs/field-notes/tree/master/src/posts/karma-server-gulp-task.md">https://github.com/earnubs/field-notes/tree/master/src/posts/karma-server-gulp-task.md</a>
+    <div class=b-metadata>
+      <p>Friday, January 22, 2016 11:04 AM</p>
+      <p><a href=mailto:stephen.stewart@carisenda.com>Stephen Stewart &lt;stephen.stewart@carisenda.com&gt;</a></p>
+      <p><a href=https://github.com/earnubs/field-notes/tree/master/src/posts/karma-server-gulp-task.md>https://github.com/earnubs/field-notes/tree/master/src/posts/karma-server-gulp-task.md</a></p>
+    </div>
   </div>
-</div>
-  
 </div>

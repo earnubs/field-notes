@@ -11,19 +11,11 @@
   {% else %}
   <h1 class="b-heading__title">{{ title }}</h1>
   {% endif %}
-  {% if publishedDate %}
-  <div class="b-post__datetime">
-    <div class="b-post__datetime_published">
-      {{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
-    </div>
-  </div>
-  {% endif %}
   {{ contents | safe }}
   <div class="b-metadata">
-    <p>{{ site.author }}
-    <p>{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
-    <p><a href="{{ site.url }}{{ post.path }}">{{ site.url }}{{ post.path }}</a>
-    <p><a href="{{ github }}">{{ github }}</a>
+    <p>{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</p>
+    <p><a href="mailto:{{ site.email }}">{{ site.author }}</a></p>
+    <p><a href="{{ github }}">{{ github }}</a></p>
   </div>
 </div>
   {% endblock %}
