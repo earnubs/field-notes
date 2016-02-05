@@ -18,14 +18,14 @@
   color: #859900;
 }
 
-/* Solarized Cyan */
+/* Not Quite Solarized Cyan */
 .hljs-number,
 .hljs-string,
 .hljs-meta .hljs-meta-string,
 .hljs-literal,
 .hljs-doctag,
 .hljs-regexp {
-  color: #2aa198;
+  color: #55c3d4;
 }
 
 /* Solarized Blue */

@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+/**
+ * @import url(https://fonts.googleapis.com/css?family=Inconsolata);
+ **/
 
 @font-face {
   font-family: 'DIN';
@@ -44,8 +46,8 @@
   font: normal 400 14px/1.4 'DIN', sans-serif;
   background: #fc673e url('/img/hex-bg.svg');
   background-size:15px;
-  color: #002b36;
-  padding:60px 0 0 0;
+  color: rgb(0, 43, 54);
+  padding:0;
   margin:0;
 }
 
@@ -71,13 +73,31 @@ pre > code {
   box-shadow: 0 3px rgba(0,0,0,0.1);
 }
 
+.b-layout__banner {
+  color: rgb(85, 195, 212);
+  background-image: url('/img/hex-bg.svg');
+  background-color: rgb(0, 43, 54);
+  background-size:15px;
+  font-size:10px;
+  text-transform: uppercase;
+  padding:5rem 0 2rem 0;
+}
+
+.b-layout__banner p {
+  margin:0;
+}
+
+.b-layout__banner > .b-layout__container {
+  width:700px;
+  margin:0 auto;
+}
+
 .b-layout__content {
   padding:52px 0px;
 }
 
 a {
-  color:#002b36;
-  text-decoration:none;
+  color: rgb(0, 43, 54);
 }
 
 a:hover {
@@ -92,31 +112,30 @@ p:last-child {
 }
 
 .b-post {
+  border-bottom:3px double rgba(0,0,0,0.1);
+  position:relative;
+}
+
+.b-post:last-child {
+  border-bottom:none;
+}
+
+.b-post__container {
   width:700px;
-  margin:5rem auto;
+  margin:2rem auto;
+  padding:2rem 0;
 }
 
 .b-heading__title {
-  font:normal 500 64px/64px 'DIN', sans-serif;
+  font:normal 500 64px/60px 'DIN', sans-serif;
   text-transform:uppercase;
   margin:0 0 1rem;
   padding:0;
   text-shadow: 0 4px rgba(0,0,0,0.1);
 }
 
-.b-post__datetime {
-  font-size:11px;
-  text-transform:uppercase;
-  margin-bottom:1rem;
-}
-
-.b-tags {
-  margin:1rem 0;
-  font-size:11px;
-}
-
-.b-tags__tag {
-  text-transform:uppercase;
+.b-heading__title a {
+  text-decoration: none;
 }
 
 .b-metadata {
@@ -150,14 +169,14 @@ p:last-child {
   color: #859900;
 }
 
-/* Solarized Cyan */
+/* Not Quite Solarized Cyan */
 .hljs-number,
 .hljs-string,
 .hljs-meta .hljs-meta-string,
 .hljs-literal,
 .hljs-doctag,
 .hljs-regexp {
-  color: #2aa198;
+  color: #55c3d4;
 }
 
 /* Solarized Blue */

@@ -1,22 +1,32 @@
 <!doctype html>
 <title>{{ site.title }}{% if title %}| {{ title }}{% endif %}</title>
 <meta charset="utf8">
+<base href="{{ site.url }}">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link href="/css/all.css" rel="stylesheet">
-<div class="b-layout__content">
-  {% block content %}
-<div class="b-post">
-  {% if path %}
-  <h1 class="b-heading__title"><a href="/{{ path }}">{{ title }}</a></h1>
-  {% else %}
-  <h1 class="b-heading__title">{{ title }}</h1>
-  {% endif %}
-  {{ contents | safe }}
-  <div class="b-metadata">
-    <p>{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</p>
-    <p><a href="mailto:{{ site.email }}">{{ site.author }}</a></p>
-    <p><a href="{{ github }}">{{ github }}</a></p>
+<div class="b-layout__banner">
+  <div class="b-layout__container">
+    <p>The infrequent field notes of a remote front-end developer.</p>
   </div>
 </div>
+<div class="b-layout__content">
+  {% block content %}
+  <div class="b-post">
+    <div class="b-post__container">
+      {% if path %}
+      <h1 class="b-heading__title"><a href="{{ path }}">{{ title }}</a></h1>
+      {% else %}
+      <h1 class="b-heading__title">{{ title }}</h1>
+      {% endif %}
+      <div class="b-post__content">
+        {{ contents | safe }}
+      </div>
+      <div class="b-metadata">
+        <p>{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</p>
+        <p><a href="mailto:{{ site.email }}">{{ site.author }}</a></p>
+        <p><a href="{{ github }}">{{ github }}</a></p>
+      </div>
+    </div>
+  </div>
   {% endblock %}
 </div>

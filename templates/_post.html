@@ -1,11 +1,15 @@
 <div class="b-post">
-  {% if post.path %}
-  <h1 class="b-heading__title"><a href="/{{ post.path }}">{{ post.title }}</a></h1>
-  {% else %}
-  <h1 class="b-heading__title">{{ post.title }}</h1>
-  {% endif %}
-  {{ post.contents | safe }}
-  <div class="b-metadata">
-    <p>{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+  <div class="b-post__container">
+    {% if post.path %}
+    <h1 class="b-heading__title"><a href="{{ post.path }}">{{ post.title }}</a></h1>
+    {% else %}
+    <h1 class="b-heading__title">{{ post.title }}</h1>
+    {% endif %}
+    <div class="b-post__content b-post__content_excerpt">
+      {{ post.excerpt| safe }}
+    </div>
+    <div class="b-metadata">
+      <p>{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 ---
-title: Karma Test Run as Gulp Task
+title: Karma Test Run as a Gulp Task
 publishedDate: 2016-01-22T11:04
 tags: javascript, gulp, karma
 ---

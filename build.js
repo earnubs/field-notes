@@ -3,6 +3,7 @@ var branch = require('metalsmith-branch');
 var collections = require('metalsmith-collections');
 var config = require('./config.json');
 var drafts = require('metalsmith-drafts');
+var excerpts = require('metalsmith-excerpts');
 var layouts = require('metalsmith-layouts');
 var markdown = require('metalsmith-markdown');
 var metallic = require('metalsmith-metallic');
@@ -39,24 +40,25 @@ module.exports = function(callback) {
   .use(metallic())
   .use(markdown())
   .use(typography())
+  .use(excerpts())
   .use(
     collections({
       posts: {
         pattern: 'posts/**.html',
-        sortBy: 'date',
+        sortBy: 'publishedDate',
         reverse: true
       }
     })
   )
   .use(
-    branch('posts/**.md')
+    branch('posts/**.html')
     .use(permalinks({
       pattern: 'posts/:title',
       relative: false
     }))
   )
   .use(
-    branch(['!posts/**.md', '!index.md'])
+    branch(['!posts/**.html', '!index.html'])
     .use(permalinks({
       relative: false
     }))
