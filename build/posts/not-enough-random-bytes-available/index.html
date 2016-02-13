@@ -10,21 +10,26 @@
   </div>
 </div>
 <div class=b-layout__content>
-  <div class=b-post>
+  <div class="b-post b-post_excerpt">
     <div class=b-post__container>
-      <h1 class=b-heading__title><a href=posts/not-enough-random-bytes-available>Not enough random bytes available</a></h1>
-      <div class=b-post__content>
-        <pre><code class=hljs>Not enough <span class=hljs-built_in>random</span> <span class=hljs-keyword>bytes</span> available.  Please <span class=hljs-built_in>do</span> some other work <span class=hljs-built_in>to</span> give
-<span class=hljs-operator>the</span> OS <span class=hljs-operator>a</span> chance <span class=hljs-built_in>to</span> collect more entropy!  (Need <span class=hljs-number>187</span> more <span class=hljs-keyword>bytes</span>)</code></pre>
+      <h1 class=b-post__title><a href=posts/not-enough-random-bytes-available>Not enough random bytes available</a></h1>
+      <div class=b-post__body>
+        <pre><code>Not enough <span class=hljs-built_in>random</span> <span class=hljs-keyword>bytes</span> available.  Please <span class=hljs-built_in>do</span> some other work <span class=hljs-built_in>to</span> give
+<span class=hljs-keyword>the</span> OS <span class=hljs-keyword>a</span> chance <span class=hljs-built_in>to</span> collect more entropy!  (Need <span class=hljs-number>187</span> more <span class=hljs-keyword>bytes</span>)
+</code></pre>
         <p>Headless containers/servers tend to develop low entropy — not enough mouse wiggling to generate randomness — which may present you with the above message. To fix this consider installing the <a href="http://www.issihosts.com/haveged/">haveged entropy daemon</a>, a
           <nobr>easy-to</nobr>-use, unpredictable random number generator:</p>
-        <pre><code class=hljs>apt <span class=hljs-keyword>install</span> haveged</code></pre>
+        <pre><code>apt <span class=hljs-keyword>install</span> haveged
+</code></pre>
       </div>
-      <div class=b-metadata>
-        <p>Monday, January 4, 2016 8:16 PM</p>
+      <div class=b-post__metadata>
+        <p class=b-datetime_relative>1451938560000</p>
+        <p class=b-datetime>Monday, January 4, 2016 8:16 PM</p>
         <p><a href=mailto:stephen.stewart@carisenda.com>Stephen Stewart &lt;stephen.stewart@carisenda.com&gt;</a></p>
         <p><a href=https://github.com/earnubs/field-notes/tree/master/src/posts/entropy-haveged.md>https://github.com/earnubs/field-notes/tree/master/src/posts/entropy-haveged.md</a></p>
       </div>
     </div>
   </div>
 </div>
+<script src=/js/lib/moment.min.js></script>
+<script src=/js/datetime.js></script>

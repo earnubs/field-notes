@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var del = require('del');
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
+var uglify = require('gulp-uglify');
 
 gulp.task('metalsmith', ['clean'], function (cb) {
   build(cb);
@@ -29,6 +30,12 @@ gulp.task('styles', ['clean'], function () {
   .pipe(gulp.dest('build/css/'));
 });
 
+gulp.task('scripts', ['clean'], function() {
+  return gulp.src('./assets/scripts/**')
+  .pipe(uglify())
+  .pipe(gulp.dest('build/js/'));
+});
+
 gulp.task('clean', function () {
   return del(['build']);
 });
@@ -37,5 +44,5 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(['src/**/*', 'assets/**/*', 'templates/**/*'], ['build']);
 });
 
-gulp.task('build', ['metalsmith', 'styles', 'images', 'fonts']);
+gulp.task('build', ['metalsmith', 'scripts', 'styles', 'images', 'fonts']);
 gulp.task('default', ['build']);

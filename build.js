@@ -5,8 +5,8 @@ var config = require('./config.json');
 var drafts = require('metalsmith-drafts');
 var excerpts = require('metalsmith-excerpts');
 var layouts = require('metalsmith-layouts');
+var marked = require('marked');
 var markdown = require('metalsmith-markdown');
-var metallic = require('metalsmith-metallic');
 var metalsmith = require('metalsmith');
 var minify = require('html-minifier').minify;
 var moment = require('moment');
@@ -14,6 +14,39 @@ var nunjucks = require('nunjucks');
 var path = require('path');
 var permalinks = require('metalsmith-permalinks');
 var typography = require('metalsmith-typography');
+//var renderer = new marked.Renderer();
+
+/**
+renderer.code = function(code, lang, escaped) {
+  var openCodeTag = '</div></div><div class=b-post__code><div class=b-post__container>';
+  var closeCodeTag = '</div></div><div class=b-post__container><div class=b-post__body>';
+
+  if (this.options.highlight) {
+    var out = this.options.highlight(code, lang);
+    if (out != null && out !== code) {
+      escaped = true;
+      code = out;
+    }
+  }
+
+  if (!lang) {
+    return openCodeTag
+      + '<pre><code>'
+      + (escaped ? code : escape(code, true))
+      + '\n</code></pre>'
+      + closeCodeTag;
+  }
+
+  return openCodeTag
+    + '<pre><code class="'
+    + this.options.langPrefix
+    + escape(lang, true)
+    + '">'
+    + (escaped ? code : escape(code, true))
+    + '\n</code></pre>\n'
+    + closeCodeTag;
+};
+**/
 
 nunjucks.configure('./templates', {watch: false});
 
@@ -37,8 +70,13 @@ module.exports = function(callback) {
     done();
   })
   .use(drafts())
-  .use(metallic())
-  .use(markdown())
+  .use(markdown({
+    langPrefix: 'hl',
+    //renderer: renderer,
+    highlight: function (code) {
+      return require('highlight.js').highlightAuto(code).value;
+    }
+  }))
   .use(typography())
   .use(excerpts())
   .use(
@@ -83,8 +121,7 @@ module.exports = function(callback) {
         removeEmptyAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        removeOptionalTags: true,
-        removeEmptyElements: true
+        removeOptionalTags: true
       });
       var beaut = beautify(min, {
         'indent_size': 2,

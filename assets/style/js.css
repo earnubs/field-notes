@@ -2,8 +2,9 @@
   display: block;
   overflow-x: auto;
   padding: 2em 1em;
-  background: #002b36;
   color: #839496;
+  background: #002b36 url('/img/hex-bg.svg');
+  background-size:15px;
 }
 
 .hljs-comment,

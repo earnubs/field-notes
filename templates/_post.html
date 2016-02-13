@@ -1,15 +1,15 @@
-<div class="b-post">
+<div class="b-post b-post_excerpt">
   <div class="b-post__container">
     {% if post.path %}
-    <h1 class="b-heading__title"><a href="{{ post.path }}">{{ post.title }}</a></h1>
+    <h1 class="b-post__title"><a href="{{ post.path }}">{{ post.title }}</a></h1>
     {% else %}
-    <h1 class="b-heading__title">{{ post.title }}</h1>
+    <h1 class="b-post__title">{{ post.title }}</h1>
     {% endif %}
-    <div class="b-post__content b-post__content_excerpt">
+    <div class="b-post__body">
       {{ post.excerpt| safe }}
     </div>
-    <div class="b-metadata">
-      <p>{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}
+    <div class="b-post__metadata">
+      <span class="b-datetime_relative">{{ moment(post.publishedDate).format('x') }}</span> / <span class="b-datetime">{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</span>
     </div>
   </div>
 </div>

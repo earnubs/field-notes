@@ -10,12 +10,12 @@
   </div>
 </div>
 <div class=b-layout__content>
-  <div class=b-post>
+  <div class="b-post b-post_excerpt">
     <div class=b-post__container>
-      <h1 class=b-heading__title><a href=posts/karma-test-run-as-a-gulp-task>Karma Test Run as a Gulp Task</a></h1>
-      <div class=b-post__content>
+      <h1 class=b-post__title><a href=posts/karma-test-run-as-a-gulp-task>Karma Test Run as a Gulp Task</a></h1>
+      <div class=b-post__body>
         <p>This is my gulp task for running JS unit tests through Karma, using the <code>run_complete</code> event gives more accurate timings in gulp logs.</p>
-        <pre><code class="hljs js">gulp.task(<span class=hljs-string>'karma'</span>, <span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(done)</span> </span>{
+        <pre><code class=hljs> gulp.task(<span class=hljs-string>'karma'</span>, <span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(done)</span> </span>{
    <span class=hljs-keyword>var</span> server = <span class=hljs-keyword>new</span> Server({
      configFile: __dirname + <span class=hljs-string>'/karma.conf.js'</span>,
      singleRun: <span class=hljs-literal>true</span>
@@ -25,13 +25,17 @@
      done();
    });
    server.start();
- });</code></pre>
+ });
+</code></pre>
       </div>
-      <div class=b-metadata>
-        <p>Friday, January 22, 2016 11:04 AM</p>
+      <div class=b-post__metadata>
+        <p class=b-datetime_relative>1453460640000</p>
+        <p class=b-datetime>Friday, January 22, 2016 11:04 AM</p>
         <p><a href=mailto:stephen.stewart@carisenda.com>Stephen Stewart &lt;stephen.stewart@carisenda.com&gt;</a></p>
         <p><a href=https://github.com/earnubs/field-notes/tree/master/src/posts/karma-server-gulp-task.md>https://github.com/earnubs/field-notes/tree/master/src/posts/karma-server-gulp-task.md</a></p>
       </div>
     </div>
   </div>
 </div>
+<script src=/js/lib/moment.min.js></script>
+<script src=/js/datetime.js></script>
