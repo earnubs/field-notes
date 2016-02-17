@@ -73,30 +73,30 @@ pre > code {
 }
 
 .b-layout__banner {
+  color: #002b36;
   background-size:15px;
-  font-size:10px;
+  font-size:18px;
   text-transform: uppercase;
-  padding:5rem 0 2rem 0;
-}
-
-.b-layout__banner p {
-  margin:0;
+  padding:2rem 0 1rem 0;
+  font-weight:300;
 }
 
 .b-layout__banner > .b-layout__container {
   width:700px;
   margin:0 auto;
+  text-align:center;
 }
 
 .b-layout__content {
-  padding:52px 0px;
 }
 
 a {
   color: rgb(0, 43, 54);
+  text-decoration: none;
 }
 
 a:hover {
+  text-decoration: underline;
 }
 
 p {
@@ -127,7 +127,7 @@ p:last-child {
 }
 
 .b-post__title {
-  font:normal 500 64px/60px 'DIN', sans-serif;
+  font:normal 600 64px/60px 'DIN', sans-serif;
   text-transform:uppercase;
   margin:0 0 1rem;
   padding:0;
@@ -139,9 +139,10 @@ p:last-child {
 }
 
 .b-post__metadata {
+  font-weight: 700;
   font-size:11px;
   text-transform:uppercase;
-  margin:2rem 0 0;
+  margin:2em 0 0;
 }
 
 .b-post__metadata p {

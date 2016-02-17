@@ -6,7 +6,9 @@
 <link href="/css/all.css" rel="stylesheet">
 <div class="b-layout__banner">
   <div class="b-layout__container">
-    <p>The infrequent field notes of a remote front-end developer.</p>
+    <a href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="82" height="80"><path fill="#002b36" stroke="#002B36" stroke-width="2" stroke-miterlimit="10" d="M34 18h18l-7 20h7L35 61l4-20h-9z"/><ellipse cx="40.4" cy="39.6" fill="none" stroke="#002B36" stroke-width="4" stroke-miterlimit="10" rx="38.1" ry="37.6"/></svg>
+  </a>
   </div>
 </div>
 <div class="b-layout__content">
@@ -21,9 +23,7 @@
       <div class="b-post__body">
         {{ contents | safe }}
       </div>
-      <div class="b-post__metadata">
-        <p class="b-datetime_relative">{{ moment(publishedDate).format('x') }}</p>
-        <p class="b-datetime">{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</p>
+      <div class="b-post__metadata">Posted <span class="b-datetime_relative">{{ moment(publishedDate).format('x') }}</span> / <span class="b-datetime">{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</span>
         <p><a href="mailto:{{ site.email }}">{{ site.author }}</a></p>
         <p><a href="{{ github }}">{{ github }}</a></p>
       </div>

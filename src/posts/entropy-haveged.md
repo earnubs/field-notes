@@ -4,7 +4,7 @@ publishedDate: 2016-01-04T20:16
 tags: linux,cloud,containers
 ---
 
-```
+```text
 Not enough random bytes available.  Please do some other work to give
 the OS a chance to collect more entropy!  (Need 187 more bytes)
 ```

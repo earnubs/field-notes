@@ -6,7 +6,9 @@
 <link href=/css/all.css rel=stylesheet>
 <div class=b-layout__banner>
   <div class=b-layout__container>
-    <p>The infrequent field notes of a remote front-end developer.</p>
+    <a href="/">
+      <svg xmlns=http://www.w3.org/2000/svg width=82 height=80><path fill=#002b36 stroke=#002B36 stroke-width=2 stroke-miterlimit=10 d="M34 18h18l-7 20h7L35 61l4-20h-9z"/><ellipse cx=40.4 cy=39.6 fill=none stroke=#002B36 stroke-width=4 stroke-miterlimit=10 rx=38.1 ry="37.6"/></svg>
+    </a>
   </div>
 </div>
 <div class=b-layout__content>
@@ -14,7 +16,7 @@
     <div class=b-post__container>
       <h1 class=b-post__title><a href=posts/not-enough-random-bytes-available>Not enough random bytes available</a></h1>
       <div class=b-post__body>
-        <pre><code>Not enough <span class=hljs-built_in>random</span> <span class=hljs-keyword>bytes</span> available.  Please <span class=hljs-built_in>do</span> some other work <span class=hljs-built_in>to</span> give
+        <pre><code class=hltext>Not enough <span class=hljs-built_in>random</span> <span class=hljs-keyword>bytes</span> available.  Please <span class=hljs-built_in>do</span> some other work <span class=hljs-built_in>to</span> give
 <span class=hljs-keyword>the</span> OS <span class=hljs-keyword>a</span> chance <span class=hljs-built_in>to</span> collect more entropy!  (Need <span class=hljs-number>187</span> more <span class=hljs-keyword>bytes</span>)
 </code></pre>
         <p>Headless containers/servers tend to develop low entropy — not enough mouse wiggling to generate randomness — which may present you with the above message. To fix this consider installing the <a href="http://www.issihosts.com/haveged/">haveged entropy daemon</a>, a
@@ -22,9 +24,7 @@
         <pre><code>apt <span class=hljs-keyword>install</span> haveged
 </code></pre>
       </div>
-      <div class=b-post__metadata>
-        <p class=b-datetime_relative>1451938560000</p>
-        <p class=b-datetime>Monday, January 4, 2016 8:16 PM</p>
+      <div class=b-post__metadata>Posted <span class=b-datetime_relative>1451938560000</span> / <span class=b-datetime>Monday, January 4, 2016 8:16 PM</span>
         <p><a href=mailto:stephen.stewart@carisenda.com>Stephen Stewart &lt;stephen.stewart@carisenda.com&gt;</a></p>
         <p><a href=https://github.com/earnubs/field-notes/tree/master/src/posts/entropy-haveged.md>https://github.com/earnubs/field-notes/tree/master/src/posts/entropy-haveged.md</a></p>
       </div>

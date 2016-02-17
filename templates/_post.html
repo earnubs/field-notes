@@ -8,8 +8,7 @@
     <div class="b-post__body">
       {{ post.excerpt| safe }}
     </div>
-    <div class="b-post__metadata">
-      <span class="b-datetime_relative">{{ moment(post.publishedDate).format('x') }}</span> / <span class="b-datetime">{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</span>
+    <div class="b-post__metadata">Posted <span class="b-datetime_relative">{{ moment(post.publishedDate).format('x') }}</span> / <span class="b-datetime">{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</span>
     </div>
   </div>
 </div>
