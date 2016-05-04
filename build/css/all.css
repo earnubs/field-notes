@@ -44,7 +44,7 @@
 
 :root {
   font: normal 400 14px/1.4 'DIN', sans-serif;
-  background: #fc673e url('/img/hex-bg.svg');
+  background: #fafafa url('/img/hex-bg.svg');
   background-size:15px;
   color: rgb(0, 43, 54);
   padding:0;
@@ -139,9 +139,7 @@ p:last-child {
 }
 
 .b-post__metadata {
-  font-weight: 700;
   font-size:11px;
-  text-transform:uppercase;
   margin:2em 0 0;
 }
 

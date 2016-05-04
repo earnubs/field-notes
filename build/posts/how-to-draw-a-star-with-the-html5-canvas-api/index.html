@@ -6,9 +6,11 @@
 <link href=/css/all.css rel=stylesheet>
 <div class=b-layout__banner>
   <div class=b-layout__container>
-    <a href="/">
-      <svg xmlns=http://www.w3.org/2000/svg width=82 height=80><path fill=#002b36 stroke=#002B36 stroke-width=2 stroke-miterlimit=10 d="M34 18h18l-7 20h7L35 61l4-20h-9z"/><ellipse cx=40.4 cy=39.6 fill=none stroke=#002B36 stroke-width=4 stroke-miterlimit=10 rx=38.1 ry="37.6"/></svg>
-    </a>
+    <a href=/>
+    <svg xmlns=http://www.w3.org/2000/svg width=60 height=60 viewBox="-279 280.5 60 60">
+      <path fill=#002B36 d="M-249,282.5c-15.464,0-28,12.535-28,27.999c0,15.466,12.536,28.001,28,28.001c15.465,0,28-12.535,28-28.001
+        C-221,295.035-233.535,282.5-249,282.5z M-252,326.5l2-14h-6l3-15h11l-4,14h5L-252,326.5z"/>
+  </svg></a>
   </div>
 </div>
 <div class=b-layout__content>
@@ -16,44 +18,44 @@
     <div class=b-post__container>
       <h1 class=b-post__title><a href=posts/how-to-draw-a-star-with-the-html5-canvas-api>How to draw a star with the HTML5 Canvas API</a></h1>
       <div class=b-post__body>
-        <p>A quick and simple introduction to drawing with the 2D canvas <abbr>API</abbr>, using a star as an example. Try <a href="http://jsfiddle.net/earnubs/TZasK/">this JsFiddle</a> to play around with different shapes.</p>
-        <pre><code>var canvas<span class=hljs-comment>;</span>
-var ctx<span class=hljs-comment>;</span>
-var <span class=hljs-keyword>length</span> = <span class=hljs-number>15</span><span class=hljs-comment>; // length of the star's arm</span>
+        <p>A quick and simple introduction to drawing with the 2D canvas <abbr>API</abbr>, using a star as an example. Try <a href=http://jsfiddle.net/earnubs/TZasK/>this JsFiddle</a> to play around with different shapes.</p>
+        <pre><code>var canvas;
+var ctx;
+var length = <span class=hljs-number>15</span>; <span class=hljs-comment>// length of the star's arm</span>
 
 <span class=hljs-comment>// get a reference to the 2d context from canvas element</span>
-canvas = document.getElementById(<span class=hljs-string>"star"</span>)<span class=hljs-comment>;</span>
-ctx = canvas.getContext(<span class=hljs-string>"2d"</span>)<span class=hljs-comment>;</span>
+canvas = document.getElementById(<span class=hljs-string>"star"</span>);
+ctx = canvas.getContext(<span class=hljs-string>"2d"</span>);
 
 <span class=hljs-comment>// move into the middle of the canvas, just to make room</span>
-ctx.translate(<span class=hljs-number>150</span>, <span class=hljs-number>150</span>)<span class=hljs-comment>;</span>
+ctx.<span class=hljs-built_in>translate</span>(<span class=hljs-number>150</span>, <span class=hljs-number>150</span>);
 
 <span class=hljs-comment>// initial offset rotation so our star is straight</span>
 <span class=hljs-comment>// this offset is half the angle of a 5 star point, which</span>
 <span class=hljs-comment>// is 36°, so 18° which in radians is:</span>
-ctx.rotate((Math.PI * <span class=hljs-number>1</span> / <span class=hljs-number>10</span>))<span class=hljs-comment>;</span>
+ctx.<span class=hljs-built_in>rotate</span>((Math.<span class=hljs-literal>PI</span> * <span class=hljs-number>1</span> / <span class=hljs-number>10</span>));
 
 <span class=hljs-comment>// make a point, 5 times</span>
-<span class=hljs-keyword>for</span> (var i = <span class=hljs-number>5</span><span class=hljs-comment>; i--;) {</span>
+<span class=hljs-keyword>for</span> (var i = <span class=hljs-number>5</span>; i--;) {
   <span class=hljs-comment>// draw line up</span>
-  ctx.lineTo(<span class=hljs-number>0</span>, <span class=hljs-keyword>length</span>)<span class=hljs-comment>;</span>
+  ctx.lineTo(<span class=hljs-number>0</span>, length);
   <span class=hljs-comment>// move origin to current same location as pen</span>
-  ctx.translate(<span class=hljs-number>0</span>, <span class=hljs-keyword>length</span>)<span class=hljs-comment>;</span>
+  ctx.<span class=hljs-built_in>translate</span>(<span class=hljs-number>0</span>, length);
   <span class=hljs-comment>// rotate the drawing board the angle of a star point</span>
-  ctx.rotate((Math.PI * <span class=hljs-number>2</span> / <span class=hljs-number>10</span>))<span class=hljs-comment>;</span>
+  ctx.<span class=hljs-built_in>rotate</span>((Math.<span class=hljs-literal>PI</span> * <span class=hljs-number>2</span> / <span class=hljs-number>10</span>));
   <span class=hljs-comment>// draw line down</span>
-  ctx.lineTo(<span class=hljs-number>0</span>, -<span class=hljs-keyword>length</span>)<span class=hljs-comment>;</span>
+  ctx.lineTo(<span class=hljs-number>0</span>, -length);
   <span class=hljs-comment>// again, move origin to pen...</span>
-  ctx.translate(<span class=hljs-number>0</span>, -<span class=hljs-keyword>length</span>)<span class=hljs-comment>;</span>
+  ctx.<span class=hljs-built_in>translate</span>(<span class=hljs-number>0</span>, -length);
   <span class=hljs-comment>// ...and rotate, ready for next arm</span>
   <span class=hljs-comment>// this rotation is the angle between the points, 120°</span>
-  ctx.rotate(-(Math.PI * <span class=hljs-number>6</span> / <span class=hljs-number>10</span>))<span class=hljs-comment>;</span>
+  ctx.<span class=hljs-built_in>rotate</span>(-(Math.<span class=hljs-literal>PI</span> * <span class=hljs-number>6</span> / <span class=hljs-number>10</span>));
 }
 <span class=hljs-comment>// last line to connect things up</span>
-ctx.lineTo(<span class=hljs-number>0</span>, <span class=hljs-keyword>length</span>)<span class=hljs-comment>;</span>
-ctx.closePath()<span class=hljs-comment>;</span>
+ctx.lineTo(<span class=hljs-number>0</span>, length);
+ctx.closePath();
 <span class=hljs-comment>// stroke the path, you could also .fill()</span>
-ctx.stroke()<span class=hljs-comment>;</span>
+ctx.<span class=hljs-built_in>stroke</span>();
 </code></pre>
       </div>
       <div class=b-post__metadata>Posted <span class=b-datetime_relative>1335211320000</span> / <span class=b-datetime>Monday, April 23, 2012 9:02 PM</span>
