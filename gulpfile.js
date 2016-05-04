@@ -1,5 +1,6 @@
+'use strict';
+
 var autoprefixer = require('autoprefixer');
-var build = require('./build.js');
 var concat = require('gulp-concat');
 var del = require('del');
 var gulp = require('gulp');
@@ -7,7 +8,9 @@ var postcss = require('gulp-postcss');
 var uglify = require('gulp-uglify');
 
 gulp.task('metalsmith', ['clean'], function (cb) {
+  let build = require('./build.js');
   build(cb);
+  delete require.cache[require.resolve('./build.js')];
 });
 
 gulp.task('images', ['clean'], function() {
