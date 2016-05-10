@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A weblog created with Matalsmith",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,8 @@
     "metalsmith-typography": "^0.1.1",
     "moment": "^2.13.0",
     "nunjucks": "^2.4.2"
+  },
+  "dependencies": {
+    "metalsmith-source-link": "^1.0.1"
   }
 }

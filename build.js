@@ -11,8 +11,8 @@ var metalsmith = require('metalsmith');
 var minify = require('html-minifier').minify;
 var moment = require('moment');
 var nunjucks = require('nunjucks');
-var path = require('path');
 var permalinks = require('metalsmith-permalinks');
+var sourcelink = require('metalsmith-source-link');
 var typography = require('metalsmith-typography');
 
 nunjucks.configure('./templates', {watch: false});
@@ -26,16 +26,7 @@ module.exports = function(callback) {
   .source('./src')
   .destination('./build')
   .ignore(['.*.swp'])
-  .use(function(files, metalsmith, done) {
-    Object.keys(files).forEach(function(file) {
-      var metadata = metalsmith.metadata();
-      // XXX test for path strings, else path will fail
-      var srcPath = path.relative(__dirname, metalsmith.source());
-      var filePath = path.join(srcPath, file);
-      files[file].github = metadata.site.github + filePath;
-    });
-    done();
-  })
+  .use(sourcelink('https://github.com/earnubs/field-notes/tree/master/'))
   .use(drafts())
   .use(markdown({
     langPrefix: 'hl',
