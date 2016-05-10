@@ -5,6 +5,5 @@ A metalsmith weblog.
 
 ```
 npm install
-npm install gulp -g
-gulp [build|watch]
+npm run-script build 
 ```
