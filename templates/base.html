@@ -25,9 +25,9 @@
       <div class="b-post__body">
         {{ contents | safe }}
       </div>
-      <div class="b-post__metadata">Posted <span class="b-datetime_relative">{{ moment(publishedDate).format('x') }}</span> / <span class="b-datetime">{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</span>
-        <p><a href="mailto:{{ site.email }}">{{ site.author }}</a></p>
-        <p><a href="{{ github }}">{{ github }}</a></p>
+      <div class="b-post__metadata">Posted <span class="b-datetime_relative">{{ moment(publishedDate).format('x') }}</span> on <span class="b-datetime">{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</span>
+        <p>Author: <a href="mailto:{{ site.email }}">{{ site.author }}</a></p>
+        <p><a href="{{ sourceURL }}">Submit issues or pull requests against the source for this file on Github.</a></p>
       </div>
     </div>
   </div>
