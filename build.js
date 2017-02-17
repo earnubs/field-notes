@@ -1,19 +1,20 @@
 'use strict';
-var beautify = require('js-beautify').html;
-var branch = require('metalsmith-branch');
-var collections = require('metalsmith-collections');
-var config = require('./config.json');
-var drafts = require('metalsmith-drafts');
-var excerpts = require('metalsmith-excerpts');
-var layouts = require('metalsmith-layouts');
-var markdown = require('metalsmith-markdown');
-var metalsmith = require('metalsmith');
-var minify = require('html-minifier').minify;
-var moment = require('moment');
-var nunjucks = require('nunjucks');
-var permalinks = require('metalsmith-permalinks');
-var sourcelink = require('metalsmith-source-link');
-var typography = require('metalsmith-typography');
+const beautify = require('js-beautify').html;
+const branch = require('metalsmith-branch');
+const collections = require('metalsmith-collections');
+const drafts = require('metalsmith-drafts');
+const excerpts = require('metalsmith-excerpts');
+const layouts = require('metalsmith-layouts');
+const markdown = require('metalsmith-markdown');
+const metalsmith = require('metalsmith');
+const minify = require('html-minifier').minify;
+const moment = require('moment');
+const nunjucks = require('nunjucks');
+const permalinks = require('metalsmith-permalinks');
+const sourcelink = require('metalsmith-source-link');
+const typography = require('metalsmith-typography');
+
+const config = require('./config.json');
 
 nunjucks.configure('./templates', {watch: false});
 
@@ -30,7 +31,7 @@ module.exports = function(callback) {
   .use(drafts())
   .use(markdown({
     langPrefix: 'hl',
-    highlight: function (code) {
+    highlight: (code) => {
       return require('highlight.js').highlightAuto(code).value;
     }
   }))
@@ -67,10 +68,10 @@ module.exports = function(callback) {
       moment: moment
     })
   )
-  .use(function(files, metalsmith, done) {
-    Object.keys(files).forEach(function(file) {
-      var content = files[file].contents.toString();
-      var min = minify(content, {
+  .use((files, metalsmith, done) => {
+    Object.keys(files).forEach((file) => {
+      const content = files[file].contents.toString();
+      const min = minify(content, {
         removeAttributeQuotes: true,
         removeComments: true,
         collapseBooleanAttributes: true,
@@ -80,7 +81,7 @@ module.exports = function(callback) {
         removeStyleLinkTypeAttributes: true,
         removeOptionalTags: true
       });
-      var beaut = beautify(min, {
+      const beaut = beautify(min, {
         'indent_size': 2,
         'indent_char': ' ',
         'eol': '\n',
@@ -100,7 +101,7 @@ module.exports = function(callback) {
     });
     done();
   })
-  .build(function(err) {
+  .build((err) => {
     if (err) {
       throw new Error(err);
     } else {
