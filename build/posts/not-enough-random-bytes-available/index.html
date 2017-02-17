@@ -1,7 +1,7 @@
 <!doctype html>
 <title>Field Notes| Not enough random bytes available</title>
 <meta charset=utf8>
-<base href=http://localhost:8765>
+<base href=http://localhost:8080>
 <link rel=icon type=image/png href=/img/favicon.png>
 <link href=/css/all.css rel=stylesheet>
 <div class=b-layout__banner>
@@ -18,7 +18,7 @@
     <div class=b-post__container>
       <h1 class=b-post__title><a href=posts/not-enough-random-bytes-available>Not enough random bytes available</a></h1>
       <div class=b-post__body>
-        <pre><code class=hltext>Not enough <span class=hljs-built_in>random</span> <span class=hljs-keyword>bytes</span> available.  Please <span class=hljs-built_in>do</span> some other work <span class=hljs-built_in>to</span> give
+        <pre><code>Not enough <span class=hljs-built_in>random</span> <span class=hljs-keyword>bytes</span> available.  Please <span class=hljs-built_in>do</span> some other work <span class=hljs-built_in>to</span> give
 <span class=hljs-keyword>the</span> OS <span class=hljs-keyword>a</span> chance <span class=hljs-built_in>to</span> collect more entropy!  (Need <span class=hljs-number>187</span> more <span class=hljs-keyword>bytes</span>)
 </code></pre>
         <p>Headless containers/servers tend to develop low entropy — not enough mouse wiggling to generate randomness — which may present you with the above message. To fix this consider installing the <a href=http://www.issihosts.com/haveged/>haveged entropy daemon</a>, a

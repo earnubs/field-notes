@@ -1,7 +1,7 @@
 <!doctype html>
 <title>Field Notes| Karma Test Run as a Gulp Task</title>
 <meta charset=utf8>
-<base href=http://localhost:8765>
+<base href=http://localhost:8080>
 <link rel=icon type=image/png href=/img/favicon.png>
 <link href=/css/all.css rel=stylesheet>
 <div class=b-layout__banner>
@@ -18,7 +18,7 @@
     <div class=b-post__container>
       <h1 class=b-post__title><a href=posts/karma-test-run-as-a-gulp-task>Karma Test Run as a Gulp Task</a></h1>
       <div class=b-post__body>
-        <p>This is my gulp task for running JS unit tests through Karma, using the <code>run_complete</code> event gives more accurate timings in gulp logs.</p>
+        <p>Below is a gulp task for running unit tests through Karma. Using the <code>run_complete</code> event gives more realistic timings in gulp logs then the example given at <a href=https://github.com/karma-runner/gulp-karma/blob/master/gulpfile.js>karma-runner/gulp-karma</a>.</p>
         <pre><code class=hljs> gulp.task(<span class=hljs-string>'karma'</span>, <span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(done)</span> </span>{
    <span class=hljs-keyword>var</span> server = <span class=hljs-keyword>new</span> Server({
      configFile: __dirname + <span class=hljs-string>'/karma.conf.js'</span>,

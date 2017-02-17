@@ -43,7 +43,7 @@
 }
 
 :root {
-  font: normal 300 16px/1.4 'DIN', sans-serif;
+  font: normal 400 18px/1.4 'DIN', sans-serif;
   background: url('/img/hex-bg.svg'),
   linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%,rgba(255, 255, 255, 0) 100%),
   linear-gradient(45deg, rgba(173, 9, 193, 0.85) 0%,rgba(0, 255, 196, 0.85) 100%),
@@ -61,18 +61,19 @@ body {
 
 code {
   font-family: 'Inconsolata', monospace;
-  border:1px solid rgba(24, 40, 43, 0.2);
   padding: 0 0.3em 2px;
-  border-radius: 3px;
+  background-color: rgba(255,255,255,0.2);
 }
 
 pre > code {
+  background-size:15px;
+  background: #002b36 url('/img/hex-bg.svg');
   border-radius: 0;
-  background-color:transparent;
-  font-size:13px;
-  color:#cce5ec;
+  color: #839496;
   display:block;
-  padding:1em;
+  font-size:13px;
+  overflow-x: auto;
+  padding: 2em 1em;
 }
 
 .b-layout__banner {
@@ -95,7 +96,6 @@ pre > code {
 
 a {
   color: rgb(0, 43, 54);
-  text-decoration: none;
 }
 
 a:hover {
@@ -134,18 +134,19 @@ p:last-child {
   text-transform:uppercase;
   margin:0 0 1rem;
   padding:0;
-  text-shadow: 0 4px rgba(0,0,0,0.1);
 }
 
 .b-post__title a {
   text-decoration: none;
 }
 
+.b-post__title + .b-post__metadata {
+  margin: 0;
+}
+
 .b-post__metadata {
-  font-size:12px;
+  font-size:14px;
   margin:2rem 0 0;
-  border: 1px dotted rgb(0, 43, 54);
-  padding: 1em;
 }
 
 .b-post__metadata p {

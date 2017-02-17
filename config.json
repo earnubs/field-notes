@@ -2,7 +2,7 @@
   "title": "Field Notes",
   "author": "Stephen Stewart <stephen.stewart@carisenda.com>",
   "email": "stephen.stewart@carisenda.com",
-  "url": "http://localhost:8765",
+  "url": "http://localhost:8080",
   "repo": "git@github.com:earnubs/field-notes.git",
   "github": "https://github.com/earnubs/field-notes/tree/master/"
 }

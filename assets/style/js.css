@@ -1,12 +1,3 @@
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 2em 1em;
-  color: #839496;
-  background: #002b36 url('/img/hex-bg.svg');
-  background-size:15px;
-}
-
 .hljs-comment,
 .hljs-quote {
   color: #586e75;

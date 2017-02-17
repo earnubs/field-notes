@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "serve": "http-server ./build"
   },
   "repository": {
     "type": "git",
@@ -20,26 +21,25 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-postcss": "^6.1.1",
-    "gulp-uglify": "^1.5.3",
+    "gulp-uglify": "^2.0.1",
     "highlight.js": "^9.3.0",
-    "html-minifier": "^2.1.2",
+    "html-minifier": "^3.3.1",
+    "http-server": "^0.9.0",
     "js-beautify": "^1.6.2",
     "metalsmith": "^2.1.0",
-    "metalsmith-branch": "0.0.4",
-    "metalsmith-collections": "^0.7.0",
+    "metalsmith-branch": "^0.0.5",
+    "metalsmith-collections": "^0.9.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-excerpts": "^1.1.0",
     "metalsmith-layouts": "^1.6.5",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-metadata": "0.0.4",
-    "metalsmith-metallic": "^0.3.1",
+    "metalsmith-metallic": "^2.0.1",
     "metalsmith-permalinks": "^0.5.0",
-    "metalsmith-tags": "^1.2.1",
+    "metalsmith-source-link": "^1.0.1",
+    "metalsmith-tags": "^2.0.0",
     "metalsmith-typography": "^0.1.1",
     "moment": "^2.13.0",
-    "nunjucks": "^2.4.2"
-  },
-  "dependencies": {
-    "metalsmith-source-link": "^1.0.1"
+    "nunjucks": "^3.0.0"
   }
 }
