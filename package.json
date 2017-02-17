@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch",
     "build": "gulp build",
-    "serve": "http-server ./build"
+    "serve": "http-server ./build",
+    "deploy": "rsync -avz . carisenda:~/carisenda.com/www/"
   },
   "repository": {
     "type": "git",
