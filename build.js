@@ -2,6 +2,7 @@
 const beautify = require('js-beautify').html;
 const branch = require('metalsmith-branch');
 const collections = require('metalsmith-collections');
+const debug = require('metalsmith-debug');
 const drafts = require('metalsmith-drafts');
 const excerpts = require('metalsmith-excerpts');
 const layouts = require('metalsmith-layouts');
@@ -27,6 +28,7 @@ module.exports = function(callback) {
   .source('./src')
   .destination('./build')
   .ignore(['.*.swp'])
+  .use(debug())
   .use(sourcelink('https://github.com/earnubs/field-notes/tree/master/'))
   .use(drafts())
   .use(markdown({
