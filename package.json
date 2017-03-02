@@ -42,5 +42,8 @@
     "metalsmith-typography": "^0.1.1",
     "moment": "^2.13.0",
     "nunjucks": "^3.0.0"
+  },
+  "dependencies": {
+    "metalsmith-debug": "^1.1.0"
   }
 }
