@@ -1,1 +1,0 @@
-!function(){for(var t,e=document.querySelectorAll(".b-datetime_relative"),n=e.length;n--;)t=e[n],t.textContent=moment(t.textContent,"x").fromNow()}();
