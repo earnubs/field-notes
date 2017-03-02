@@ -7,7 +7,8 @@
     "watch": "gulp watch",
     "build": "gulp build",
     "serve": "http-server ./build",
-    "deploy": "rsync -avz . carisenda:~/carisenda.com/www/"
+    "deploy": "rsync -avz ./build/ carisenda:~/carisenda.com/www/",
+    "debug": "DEBUG=metalsmith:* gulp watch"
   },
   "repository": {
     "type": "git",
