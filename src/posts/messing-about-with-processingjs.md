@@ -1,5 +1,6 @@
 ---
 title: Visualising NINIS Data
+draft: true
 publishedDate: 2009-10-08T14:48
 ---
 I was messing about with Processing.js, NI postcodes from <a href="http://www.nisra.gov.uk/">NISRA</a> and some <a href="http://www.ninis.nisra.gov.uk/">NINIS</a> data, nothing terribly exciting but I thought some sketches looked cool so I'm posting them here now.

@@ -1,11 +1,11 @@
 <div class="b-post b-post_excerpt">
   <div class="b-post__container">
     {% if post.path %}
-    <h1 class="b-post__title"><a href="{{ post.path }}">{{ post.title }}</a></h1>
+    <h1 class="b-post__title"><a href="/{{ post.path }}">{{ post.title }}</a></h1>
     {% else %}
     <h1 class="b-post__title">{{ post.title }}</h1>
     {% endif %}
-    <div class="b-post__metadata">Posted <span class="b-datetime_relative">{{ moment(post.publishedDate).format('x') }}</span> on <span class="b-datetime">{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("LLLL") }}</span>
+    <div class="b-post__metadata">Posted <span class="b-datetime_relative">{{ moment(post.publishedDate).format('x') }}</span> | <span class="b-datetime">{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("ll") }}</span>
     </div>
   </div>
 </div>

@@ -15,12 +15,12 @@ gulp.task('metalsmith', ['clean'], function (cb) {
 
 gulp.task('images', ['clean'], function() {
   return gulp.src('./assets/images/**')
-  .pipe(gulp.dest('build/img/'));
+    .pipe(gulp.dest('build/static/img/'));
 });
 
 gulp.task('fonts', ['clean'], function() {
   return gulp.src('./assets/fonts/**')
-  .pipe(gulp.dest('build/font/'));
+    .pipe(gulp.dest('build/static/font/'));
 });
 
 gulp.task('styles', ['clean'], function () {
@@ -28,15 +28,15 @@ gulp.task('styles', ['clean'], function () {
     autoprefixer()
   ];
   return gulp.src('assets/style/*.css')
-  .pipe(postcss(processors))
-  .pipe(concat('all.css'))
-  .pipe(gulp.dest('build/css/'));
+    .pipe(postcss(processors))
+    .pipe(concat('all.css'))
+    .pipe(gulp.dest('build/static/css/'));
 });
 
 gulp.task('scripts', ['clean'], function() {
   return gulp.src('./assets/scripts/**')
-  .pipe(uglify())
-  .pipe(gulp.dest('build/js/'));
+    .pipe(uglify())
+    .pipe(gulp.dest('build/static/js/'));
 });
 
 gulp.task('clean', function () {

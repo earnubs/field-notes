@@ -1,50 +1,50 @@
 /**
- * @import url(https://fonts.googleapis.com/css?family=Inconsolata);
+ * @import url(https://static/fonts.googleapis.com/css?family=Inconsolata);
  **/
 
 @font-face {
   font-family: 'DIN';
   font-weight: 300;
-  src: url('/font/DINWeb-Light.eot');
-  src: url('/font/DINWeb-Light.eot?#iefix') format('embedded-opentype'),
-  url('/font/DINWeb-Light.woff') format('woff');
+  src: url('/static/font/DINWeb-Light.eot');
+  src: url('/static/font/DINWeb-Light.eot?#iefix') format('embedded-opentype'),
+  url('/static/font/DINWeb-Light.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DIN';
   font-weight: 400;
-  src: url('/font/DINWeb.eot');
-  src: url('/font/DINWeb.eot?#iefix') format('embedded-opentype'),
-  url('/font/DINWeb.woff') format('woff');
+  src: url('/static/font/DINWeb.eot');
+  src: url('/static/font/DINWeb.eot?#iefix') format('embedded-opentype'),
+  url('/static/font/DINWeb.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DIN';
   font-weight: 500;
-  src: url('/font/DINWeb-Medium.eot');
-  src: url('/font/DINWeb-Medium.eot?#iefix') format('embedded-opentype'),
-  url('/font/DINWeb-Medium.woff') format('woff');
+  src: url('/static/font/DINWeb-Medium.eot');
+  src: url('/static/font/DINWeb-Medium.eot?#iefix') format('embedded-opentype'),
+  url('/static/font/DINWeb-Medium.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DIN';
   font-weight: 700;
-  src: url('/font/DINWeb-Bold.eot');
-  src: url('/font/DINWeb-Bold.eot?#iefix') format('embedded-opentype'),
-  url('/font/DINWeb-Bold.woff') format('woff');
+  src: url('/static/font/DINWeb-Bold.eot');
+  src: url('/static/font/DINWeb-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/static/font/DINWeb-Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DIN';
   font-weight: 900;
-  src: url('/font/DINWeb-Black.eot');
-  src: url('/font/DINWeb-Black.eot?#iefix') format('embedded-opentype'),
-  url('/font/DINWeb-Black.woff') format('woff');
+  src: url('/static/font/DINWeb-Black.eot');
+  src: url('/static/font/DINWeb-Black.eot?#iefix') format('embedded-opentype'),
+  url('/static/font/DINWeb-Black.woff') format('woff');
 }
 
 :root {
-  font: normal 400 18px/1.4 'DIN', sans-serif;
-  background: url('/img/hex-bg.svg'),
+  font: normal 400 16px/1.4 'DIN', sans-serif;
+  background: url('/static/img/hex-bg.svg'),
   linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%,rgba(255, 255, 255, 0) 100%),
   linear-gradient(45deg, rgba(173, 9, 193, 0.85) 0%,rgba(0, 255, 196, 0.85) 100%),
   linear-gradient(135deg, rgb(0, 255, 71) 0%,rgb(0, 8, 255) 100%);
@@ -67,7 +67,7 @@ code {
 
 pre > code {
   background-size:15px;
-  background: #002b36 url('/img/hex-bg.svg');
+  background: #002b36 url('/static/img/hex-bg.svg');
   border-radius: 0;
   color: #839496;
   display:block;
@@ -91,15 +91,21 @@ pre > code {
   text-align:center;
 }
 
-.b-layout__content {
-}
-
 a {
   color: rgb(0, 43, 54);
+  text-decoration: none;
+  background-color: rgba(255,255,255, 0.1);
+  padding: 0 6px;
 }
 
 a:hover {
-  text-decoration: underline;
+  background-color: rgba(255,255,255, 0.3);
+}
+
+.b-post__title a,
+.b-layout__banner a {
+  border: none;
+  background-color: transparent;
 }
 
 p {
@@ -116,7 +122,7 @@ p:last-child {
 }
 
 .b-post_excerpt {
-  padding:3rem 0;
+  padding:2rem 0;
 }
 
 .b-post:last-child {
@@ -136,12 +142,8 @@ p:last-child {
   padding:0;
 }
 
-.b-post__title a {
-  text-decoration: none;
-}
-
 .b-post__title + .b-post__metadata {
-  margin: 0;
+  margin-top: -1em;
 }
 
 .b-post__metadata {
