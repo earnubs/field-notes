@@ -5,7 +5,10 @@
     {% else %}
     <h1 class="b-post__title">{{ post.title }}</h1>
     {% endif %}
-    <div class="b-post__metadata">Posted <span class="b-datetime_relative">{{ moment(post.publishedDate).format('x') }}</span> | <span class="b-datetime">{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("ll") }}</span>
+    {% if post.subline %}
+    <h2 class="b-post__title_subline">{{ post.subline }}</h2>
+    {% endif %}
+    <div class="b-post__metadata">Posted <span class="b-datetime_relative">{{ moment(post.publishedDate).format('x') }}</span>, <span class="b-datetime">{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("ll") }}</span>
     </div>
   </div>
 </div>

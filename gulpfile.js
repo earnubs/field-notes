@@ -7,23 +7,23 @@ var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var uglify = require('gulp-uglify');
 
-gulp.task('metalsmith', ['clean'], function (cb) {
+gulp.task('metalsmith', function (cb) {
   let build = require('./build.js');
   build(cb);
   delete require.cache[require.resolve('./build.js')];
 });
 
-gulp.task('images', ['clean'], function() {
+gulp.task('images', function() {
   return gulp.src('./assets/images/**')
     .pipe(gulp.dest('build/static/img/'));
 });
 
-gulp.task('fonts', ['clean'], function() {
+gulp.task('fonts', function() {
   return gulp.src('./assets/fonts/**')
     .pipe(gulp.dest('build/static/font/'));
 });
 
-gulp.task('styles', ['clean'], function () {
+gulp.task('styles', function () {
   var processors = [
     autoprefixer()
   ];
@@ -33,7 +33,7 @@ gulp.task('styles', ['clean'], function () {
     .pipe(gulp.dest('build/static/css/'));
 });
 
-gulp.task('scripts', ['clean'], function() {
+gulp.task('scripts', function() {
   return gulp.src('./assets/scripts/**')
     .pipe(uglify())
     .pipe(gulp.dest('build/static/js/'));

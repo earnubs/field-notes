@@ -1,5 +1,6 @@
 ---
 title: LXD on macOS 
+subline: Remember if you die in here, you die in the real world too.
 publishedDate: 2017-02-17T21:29
 tags: lxd,containers
 ---

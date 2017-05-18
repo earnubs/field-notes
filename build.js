@@ -44,7 +44,8 @@ module.exports = function(callback) {
       posts: {
         pattern: 'posts/**.html',
         sortBy: 'publishedDate',
-        reverse: true
+        reverse: true,
+        refer: false
       }
     })
   )
