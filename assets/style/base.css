@@ -45,7 +45,7 @@
 :root {
   font: normal 300 16px/1.7 'Libre Baskerville', sans-serif;
   background-size:15px;
-  color: #333;
+  color: #002b36;
   padding:0;
   margin:0;
 }
@@ -73,7 +73,7 @@ pre > code {
 
 .b-layout__banner {
   padding:1rem 0;
-  background: #333;
+  background: #002b36;
   border-bottom: 1px solid rgba(150, 173, 209, 0.8);
 }
 
@@ -93,7 +93,7 @@ pre > code {
 }
 
 a {
-  color: #333;
+  color: #002b36;
   text-decoration: none;
 }
 
