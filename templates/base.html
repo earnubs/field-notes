@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
 <div class="b-layout__banner">
   <div class="b-layout__container">
-    <a class="b-layout__banner_wordmark" href="/"></a>
+    <a class="b-layout__banner_wordmark" href="/">carisenda</a>
   </div>
 </div>
 <div class="b-layout__content">
@@ -25,7 +25,7 @@
         {{ contents | safe }}
       </div>
       <div class="b-post__metadata">
-        <p>Posted <span class="b-datetime_relative">{{ moment(publishedDate).format('x') }}</span>, <span class="b-datetime">{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("ll") }}</span></p>
+        <p>Published <span class="b-datetime_relative">{{ moment(publishedDate).format('x') }}</span>, <span class="b-datetime">{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("ll") }}</span></p>
         <p><a href="{{ sourceURL }}"><img src="/static/img/github.svg" width="16" height="16" /></a></p>
       </div>
     </div>
