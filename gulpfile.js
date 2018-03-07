@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var del = require('del');
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
+var csso = require('postcss-csso');
 var uglify = require('gulp-uglify');
 
 gulp.task('metalsmith', function (cb) {
@@ -25,7 +26,8 @@ gulp.task('fonts', function() {
 
 gulp.task('styles', function () {
   var processors = [
-    autoprefixer()
+    autoprefixer(),
+    csso()
   ];
   return gulp.src('assets/style/*.css')
     .pipe(postcss(processors))

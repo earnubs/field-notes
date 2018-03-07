@@ -40,7 +40,8 @@
     "metalsmith-source-link": "^1.0.1",
     "metalsmith-typography": "^0.1.1",
     "moment": "^2.20.1",
-    "nunjucks": "^3.1.2"
+    "nunjucks": "^3.1.2",
+    "postcss-csso": "^3.0.0"
   },
   "dependencies": {
     "metalsmith-debug": "^1.1.0"

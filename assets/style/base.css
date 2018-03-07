@@ -56,7 +56,6 @@ body {
 }
 
 code {
-  font-style: italic;
 }
 
 pre > code {
@@ -69,6 +68,19 @@ pre > code {
   font-size:13px;
   overflow-x: auto;
   padding: 2em 1em;
+}
+
+kbd {
+  font-family: 'Inconsolata', monospace;
+  font-size:12px;
+  padding: 4px 6px;
+  border:1px  solid #dfdfdf;
+  border-radius:3px;
+  background-color: #efefef;
+  box-shadow: 0 1px 0 rgba(223,223,223,.5), 0 0 0 2px #FFF inset;
+  text-shadow: 0px 1px 0px #fff;
+  text-transform: uppercase;
+  color: #666;
 }
 
 .b-layout__banner {
@@ -173,10 +185,10 @@ h1, h2, h3 {
   font-size: 8px;
   margin:1rem 0 0;
   border-top: 1px dotted #eee;
-  padding-top: 0.6em;
+  padding-top: 1em;
   letter-spacing: 1px;
 }
 
 .b-post__metadata p {
-  margin:0 0 0.1em;
+  margin:0 0 0.6em;
 }
