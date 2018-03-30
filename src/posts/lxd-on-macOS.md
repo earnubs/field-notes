@@ -12,13 +12,13 @@ well add it here too.
 
 Originally based on: http://mike.teczno.com/notes/disposable-virtualbox-lxc-environments.html
 
-# VM Setup
+## VM Setup
 
 Download an Ubuntu Server ISO (http://www.ubuntu.com/download/server)
 
 Create a new VMWare virtual machine, select boot from the ISO with 2 NICs configured as "Share with My Mac" & "Private to my Mac" respectively. During the creation of the Ubuntu VM there will be a page to select installed software, select "OpenSSH server".
 
-# VM Networking
+## VM Networking
 
 Log in to the newly created VM and install bridge-utils:
 
@@ -66,7 +66,7 @@ Install open-vm-tools:
 $ apt install open-vm-tools
 ```
 
-# Avahi on VM
+## Avahi on VM
 
 Next, set up Avahi to broadcast host names so we don’t need to remember DHCP-assigned IP addresses. On the Ubuntu host, install avahi-daemon:
 
@@ -88,7 +88,7 @@ $ sudo service avahi-daemon restart
 ```
 Now, you should be able to ping and ssh to $hostname from within the virtual machine and your Mac command line.
 
-# LXD server (Ubuntu VM)
+## LXD server (Ubuntu VM)
 
 ```
 sudo add-apt-repository ppa:ubuntu-lxc/lxd-stable
@@ -126,7 +126,7 @@ lxc config set core.https_address "[::]"
 lxc config set core.trust_password some-password
 ```
 
-# LXD client (macOS)
+## LXD client (macOS)
 
 With a working Go setup:
 
@@ -140,9 +140,8 @@ $ go install -v ./lxc
 $ lxc remote add <name> UBUNTU_VM_HOST.local
 ```
 
-# Finally, on macOS
+## Finally, on macOS
 
 ```
 $ ssh enabling-ape.local -A
 ```
-
