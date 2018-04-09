@@ -33,6 +33,15 @@
   </div>
   {% endblock %}
 </div>
+<div class="b-layout__footer">
+  <div class="b-layout__container">
+
+    <p><i>Absit iniuria verbis</i></p>
+    <p>Last build: {{ revno }}, {{ moment(build_date).fromNow() }},
+    {{ build_date_formatted }}
+  </p>
+  </div>
+</div>
 
 <script src="/static/js/lib/moment.min.js"></script>
 <script src="/static/js/datetime.js"></script>
