@@ -37,7 +37,7 @@
   <div class="b-layout__container">
 
     <p><i>Absit iniuria verbis</i></p>
-    <p>Last build: {{ revno }}, {{ moment(build_date).fromNow() }},
+    <p>Last build: {{ revno }}, <span class="b-datetime_realtive">{{ moment(build_date).format('x') }}i</span>,
     {{ build_date_formatted }}
   </p>
   </div>
