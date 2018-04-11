@@ -46,6 +46,12 @@ gulp.task('manifest', function() {
     .pipe(gulp.dest('build/'));
 });
 
+gulp.task('sw', function() {
+  return gulp.src('./assets/sw/**')
+    .pipe(uglify())
+    .pipe(gulp.dest('build/'));
+});
+
 gulp.task('clean', function () {
   return del(['build']);
 });
@@ -54,5 +60,5 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(['src/**/*', 'assets/**/*', 'templates/**/*'], ['build']);
 });
 
-gulp.task('build', ['metalsmith', 'scripts', 'styles', 'images', 'fonts', 'manifest']);
+gulp.task('build', ['metalsmith', 'scripts', 'styles', 'images', 'fonts', 'sw', 'manifest']);
 gulp.task('default', ['build']);
