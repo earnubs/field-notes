@@ -3,90 +3,83 @@
  **/
 
 @font-face {
-  font-family: 'DIN';
+  font-family: "DIN";
   font-weight: 300;
-  src: url('/static/font/DINWeb-Light.eot');
-  src: url('/static/font/DINWeb-Light.eot?#iefix') format('embedded-opentype'),
-  url('/static/font/DINWeb-Light.woff2') format('woff2'),
-  url('/static/font/DINWeb-Light.woff') format('woff');
+  src: url("/static/font/DINWeb-Light.eot");
+  src: url("/static/font/DINWeb-Light.eot?#iefix") format("embedded-opentype"),
+    url("/static/font/DINWeb-Light.woff2") format("woff2"),
+    url("/static/font/DINWeb-Light.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'DIN';
+  font-family: "DIN";
   font-weight: 700;
-  src: url('/static/font/DINWeb-Bold.eot');
-  src: url('/static/font/DINWeb-Bold.eot?#iefix') format('embedded-opentype'),
-  url('/static/font/DINWeb-Bold.woff2') format('woff2'),
-  url('/static/font/DINWeb-Bold.woff') format('woff');
+  src: url("/static/font/DINWeb-Bold.eot");
+  src: url("/static/font/DINWeb-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/static/font/DINWeb-Bold.woff2") format("woff2"),
+    url("/static/font/DINWeb-Bold.woff") format("woff");
 }
 
 :root {
-  font: normal 300 16px/1.7 'Libre Baskerville', sans-serif;
-  background-size:15px;
+  font: normal 300 16px/1.7 "Libre Baskerville", sans-serif;
+  background-size: 15px;
   color: #002b36;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 code {
 }
 
 pre > code {
-  font: normal 300 14px/1.5 'Inconsolata', monospace;
-  background-size:15px;
+  font: normal 300 14px/1.5 "Inconsolata", monospace;
+  background-size: 15px;
   background-color: #002b36;
   border-radius: 0;
   color: #839496;
-  display:block;
-  font-size:13px;
+  display: block;
+  font-size: 13px;
   overflow-x: auto;
   padding: 2em 1em;
 }
 
 kbd {
-  font-family: 'Inconsolata', monospace;
-  font-size:12px;
+  font-family: "Inconsolata", monospace;
+  font-size: 12px;
   padding: 4px 6px;
-  border:1px  solid #dfdfdf;
-  border-radius:3px;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
   background-color: #efefef;
-  box-shadow: 0 1px 0 rgba(223,223,223,.5), 0 0 0 2px #FFF inset;
+  box-shadow: 0 1px 0 rgba(223, 223, 223, 0.5), 0 0 0 2px #fff inset;
   text-shadow: 0px 1px 0px #fff;
   text-transform: uppercase;
   color: #666;
 }
 
 .b-layout__banner {
-  padding:1rem 0;
+  padding: 1rem 0;
   background: #002b36;
   border-bottom: 1px solid rgba(150, 173, 209, 0.8);
 }
 
-
 .b-layout__banner_wordmark {
-  font:normal 200 11px/10px 'DIN', sans-serif;
-  width:100%;
+  font: normal 200 11px/10px "DIN", sans-serif;
+  width: 100%;
   height: 10px;
-  display:inline-block;
+  display: inline-block;
   color: #ddd;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.b-layout__banner > .b-layout__container,
-.b-layout__footer > .b-layout__container {
-  width:700px;
-  margin:0 auto;
-}
-
 .b-layout__footer {
-  margin-top:3rem;
-  padding:1rem 0;
+  margin-top: 3rem;
+  padding: 1rem 0;
   font-size: 11px;
 }
 
@@ -98,7 +91,6 @@ a {
   color: #002b36;
   text-decoration: none;
 }
-
 
 .b-post__body {
   margin-top: 1em;
@@ -133,14 +125,13 @@ a[href^="#"]:hover {
   background: none;
 }
 
-
 a[href^="#"]:hover::before {
   font-weight: 100;
-  content: '#';
-  color: rgba(5,209,193,.4);
-  position:absolute;
-  top:0;
-  left:-0.9em;
+  content: "#";
+  color: rgba(5, 209, 193, 0.4);
+  position: absolute;
+  top: 0;
+  left: -0.9em;
 }
 
 p {
@@ -148,46 +139,57 @@ p {
 }
 
 p:last-child {
-  margin:0;
+  margin: 0;
 }
 
 .b-post {
-  position:relative;
-  margin:2rem 0;
+  position: relative;
+  margin: 2rem 0;
 }
 
 .b-post_excerpt {
-  padding:2rem 0;
+  padding: 2rem 0;
 }
 
 .b-post:last-child {
-  border-bottom:none;
+  border-bottom: none;
 }
 
+.b-layout__container,
 .b-post__container {
-  width:700px;
-  margin:0 auto;
-  padding:0;
+  box-sizing: border-box;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1em;
+  overflow-wrap: break-word;
 }
 
 .b-post__title {
-  font:normal 600 64px/60px 'DIN', sans-serif;
-  text-transform:uppercase;
-  margin:0;
-  padding:0;
+  font: normal 600 64px/60px "DIN", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 414px) {
+  .b-post__title {
+    font: normal 600 32px/30px "DIN", sans-serif;
+  }
 }
 
 .b-post__title_subline {
-  margin:0;
-  padding:0;
-  font: italic 300 16px/1.7 'Libre Baskerville', sans-serif;
+  margin: 0;
+  padding: 0;
+  font: italic 300 16px/1.7 "Libre Baskerville", sans-serif;
   text-transform: none;
 }
 
-
-h1, h2, h3 {
-  font-family: 'DIN', sans-serif;
-  text-transform:uppercase;
+h1,
+h2,
+h3 {
+  font-family: "DIN", sans-serif;
+  text-transform: uppercase;
   position: relative;
   margin: 1em 0 0;
 }
@@ -201,5 +203,5 @@ h2:hover::before {
 }
 
 .b-post__metadata p {
-  margin:0 0 0.6em;
+  margin: 0 0 0.6em;
 }
