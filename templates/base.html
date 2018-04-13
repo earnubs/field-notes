@@ -48,4 +48,16 @@
 
 <script src="/static/js/lib/moment.min.js"></script>
 <script src="/static/js/datetime.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+    .register('/pwa.js', { scope: '/' })
+      .then(() => {
+        console.log("Service Worker Registered");
+      })
+      .catch((error) => {
+        console.log('Registration failed with ' + error);
+      });
+  }
+</script>
 </html>
