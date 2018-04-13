@@ -4,6 +4,7 @@
 <meta charset="utf8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ site.description }}">
+<link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/png" href="/static/img/favicon.png">
 <link href="/static/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
@@ -29,7 +30,7 @@
       </div>
       <div class="b-post__metadata">
         <p>Published <span class="b-datetime_relative">{{ moment(publishedDate).format('x') }}</span>, <span class="b-datetime">{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("ll") }}</span></p>
-        <p><a href="{{ sourceURL }}"><img src="/static/img/github.svg" width="16" height="16" /></a></p>
+        <p><a href="{{ sourceURL }}"><img src="/static/img/github.svg" width="16" height="16" alt="View source on Github"/></a></p>
       </div>
     </div>
   </div>

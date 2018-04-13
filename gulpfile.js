@@ -41,6 +41,11 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('build/static/js/'));
 });
 
+gulp.task('manifest', function() {
+  return gulp.src('./manifest.json')
+    .pipe(gulp.dest('build/'));
+});
+
 gulp.task('clean', function () {
   return del(['build']);
 });
@@ -49,5 +54,5 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(['src/**/*', 'assets/**/*', 'templates/**/*'], ['build']);
 });
 
-gulp.task('build', ['metalsmith', 'scripts', 'styles', 'images', 'fonts']);
+gulp.task('build', ['metalsmith', 'scripts', 'styles', 'images', 'fonts', 'manifest']);
 gulp.task('default', ['build']);
