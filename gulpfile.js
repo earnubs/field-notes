@@ -9,9 +9,9 @@ var csso = require('postcss-csso');
 var uglify = require('gulp-uglify');
 
 gulp.task('metalsmith', function (cb) {
-  let build = require('./build.js');
+  let build = require('./metalsmith.js');
   build(cb);
-  delete require.cache[require.resolve('./build.js')];
+  delete require.cache[require.resolve('./metalsmith.js')];
 });
 
 gulp.task('images', function() {

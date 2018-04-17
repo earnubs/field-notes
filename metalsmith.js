@@ -34,8 +34,8 @@ module.exports = function(callback) {
       build_date: moment().format(),
       build_date_formatted: moment().format('LLLL'),
       revno: require('child_process')
-      .execSync('git rev-parse --short origin/master')
-      .toString().trim()
+        .execSync('git rev-parse --short origin/master')
+        .toString().trim()
     })
     .clean(false) // leave for gulp
     .source('./src')
