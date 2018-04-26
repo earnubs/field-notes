@@ -24,6 +24,7 @@ renderer.heading = function (text, level) {
 };
 
 const config = require('./config.json');
+const manifest = require('./build/static/js/manifest.json');
 
 nunjucks.configure('./templates', {watch: false});
 
@@ -31,6 +32,7 @@ module.exports = function(callback) {
   return metalsmith(__dirname)
     .metadata({
       site: config,
+      webpack: manifest,
       build_date: moment().format(),
       build_date_formatted: moment().format('LLLL'),
       revno: require('child_process')

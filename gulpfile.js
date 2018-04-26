@@ -2,11 +2,25 @@
 
 const autoprefixer = require('autoprefixer');
 const concat = require('gulp-concat');
+const csso = require('postcss-csso');
 const del = require('del');
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
-const csso = require('postcss-csso');
+const webpack = require('webpack');
+
+const config = require('./webpack.config.js');
+const manifest = require('./build/static/js/manifest.json');
+
 const metalsmith = require('./metalsmith.js');
+
+const build = gulp.series(
+  clean,
+  gulp.parallel(images, fonts, styles, appManifest,
+    gulp.series(scripts, blog, scope)
+  ));
+
+gulp.task('default', build);
+gulp.task('scripts', scripts);
 
 function clean() {
   return del(['build']);
@@ -26,20 +40,38 @@ function fonts() {
     .pipe(gulp.dest('build/static/font/'));
 }
 
+const cssProcessors = [
+  autoprefixer(),
+  csso()
+];
+
 function styles() {
-  const processors = [
-    autoprefixer(),
-    csso()
-  ];
   return gulp.src('assets/style/*.css')
-    .pipe(postcss(processors))
+    .pipe(postcss(cssProcessors))
     .pipe(concat('all.css'))
     .pipe(gulp.dest('build/static/css/'));
 }
 
-const build = gulp.series(clean, gulp.parallel(blog, images, fonts, styles));
+function appManifest() {
+  return gulp.src('./src/manifest.json')
+    .pipe(gulp.dest('build/'));
+}
 
-gulp.task('default', build);
+/** Move the service worker to top level scope */
+/** FIXME use headers to do this in future */
+function scope() {
+  return gulp.src(`./build/static/js/${manifest['pwa.js']}`)
+    .pipe(gulp.dest('build/'));
+}
+
+function scripts() {
+  return new Promise(resolve => webpack(config, (err, stats) => {
+    if(err) console.log('Webpack', err); // eslint-disable-line no-console
+    console.log(stats.toString({ /* stats options */ })); // eslint-disable-line no-console
+    resolve();
+  }));
+}
+
 
 //gulp.task('metalsmith', function (cb) {
 //  let build = require('./metalsmith.js');

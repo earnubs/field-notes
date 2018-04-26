@@ -1,9 +1,7 @@
-/* global moment */
-! function() {
-  var datetimes = document.querySelectorAll('.b-datetime_relative');
+import moment from 'moment';
 
-  for (var el, i = datetimes.length; i--;) {
-    el = datetimes[i];
-    el.textContent = moment(el.textContent, 'x').fromNow();
-  }
-}();
+const datetimes = document.querySelectorAll('.b-datetime_relative');
+
+datetimes.forEach((node) => {
+  node.textContent = moment(node.textContent, 'x').fromNow();
+});
