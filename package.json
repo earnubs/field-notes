@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch",
-    "build": "gulp build",
+    "build": "gulp",
     "serve": "http-server ./build",
     "deploy": "rsync -avz ./build/ carisenda:~/carisenda.com/www/",
     "debug": "DEBUG=metalsmith:* gulp watch"
@@ -23,7 +23,6 @@
     "gulp": "^4.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-uglify": "^3.0.0",
     "highlight.js": "^9.12.0",
     "html-minifier": "^3.5.9",
     "http-server": "^0.11.1",

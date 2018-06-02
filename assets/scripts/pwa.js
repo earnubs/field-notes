@@ -1,6 +1,6 @@
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('carisenda-2018-04-26T21:18').then((cache) => {
+    caches.open('carisenda-2018-06-02T20:50').then((cache) => {
       return cache
         .addAll([
           '/',

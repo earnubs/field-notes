@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+Header set Strict-Transport-Security "max-age=31415926; includeSubDomains; preload" env=HTTPS
+Header set Service-Worker-Allowed "/"
+
+AddType application/x-font-ttf           ttc ttf
+AddType application/x-font-otf           otf
+AddType font/woff            woff
+AddType font/woff2           woff2
+AddType application/vnd.ms-fontobject    eot
+
+<FilesMatch ".(eot|ttf|otf|woff|woff2)">
+  Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
