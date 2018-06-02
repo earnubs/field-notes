@@ -46,11 +46,11 @@
   </div>
 </div>
 
-<script src="/static/js/{{ webpack["main.js"] }}"></script>
+<script src="{{ webpack["main.js"] }}"></script>
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-    .register('/{{ webpack["pwa.js"] }}', { scope: '/' })
+    .register('{{ webpack["pwa.js"] }}', { scope: '/' })
       .then(() => {
         console.log("Service Worker Registered");
       })

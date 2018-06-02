@@ -18,7 +18,7 @@ const build = gulp.series(
   ));
 
 gulp.task('default', build);
-gulp.task('bundle', bundle);
+gulp.task('blog', blog);
 
 function clean() {
   return del(['build']);

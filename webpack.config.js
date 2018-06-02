@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const path = require('path');
 
-const publicPath = path.resolve(__dirname, 'build/static/js');
+const publicPath = path.resolve(__dirname, 'build/static/js/');
 
 module.exports = {
   mode: 'production',
@@ -12,12 +12,11 @@ module.exports = {
   },
   output: {
     path: publicPath,
+    publicPath: '/static/js/',
     filename: '[name]-[chunkhash].js'
   },
   plugins: [
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new ManifestPlugin({
-      publicPath: publicPath
-    }),
+    new ManifestPlugin(),
   ],
 };
