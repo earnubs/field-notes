@@ -142,6 +142,10 @@ p:last-child {
   margin: 0;
 }
 
+iframe {
+  margin: 1.6em 0;
+}
+
 .b-post {
   position: relative;
   margin: 2rem 0;
