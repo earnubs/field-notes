@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch",
-    "build": "gulp build",
+    "build": "gulp",
     "serve": "http-server ./build",
     "deploy": "rsync -avz ./build/ carisenda:~/carisenda.com/www/",
     "debug": "DEBUG=metalsmith:* gulp watch"
@@ -20,10 +20,9 @@
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-uglify": "^3.0.0",
     "highlight.js": "^9.12.0",
     "html-minifier": "^3.5.9",
     "http-server": "^0.11.1",
@@ -31,6 +30,7 @@
     "metalsmith": "^2.1.0",
     "metalsmith-branch": "^0.0.5",
     "metalsmith-collections": "^0.9.0",
+    "metalsmith-debug": "^1.1.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-excerpts": "^1.1.0",
     "metalsmith-layouts": "^1.6.5",
@@ -41,9 +41,9 @@
     "metalsmith-typography": "^0.1.1",
     "moment": "^2.20.1",
     "nunjucks": "^3.1.2",
-    "postcss-csso": "^3.0.0"
-  },
-  "dependencies": {
-    "metalsmith-debug": "^1.1.0"
+    "postcss-csso": "^3.0.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-manifest-plugin": "^2.0.1"
   }
 }

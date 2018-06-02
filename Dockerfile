@@ -10,6 +10,6 @@ RUN git clone https://github.com/earnubs/field-notes.git /blog
 # Fonts are not kept in repo...
 COPY ./assets/fonts/DINWeb* assets/fonts/
 RUN npm install
-RUN /blog/node_modules/.bin/gulp build
+RUN /blog/node_modules/.bin/gulp
 
 ENTRYPOINT ["npm", "run", "serve"]

@@ -23,7 +23,9 @@ renderer.heading = function (text, level) {
   return `<h${level} id="${escapedText}"><a href="#${escapedText}">${text}</a></h${level}>`;
 };
 
-const config = require('./config.json');
+const config = require('./about.json');
+// we need webpack's build manifest to it's output to templates (main.js, etc)
+const manifest = require('./build/static/js/manifest.json');
 
 nunjucks.configure('./templates', {watch: false});
 
@@ -31,11 +33,12 @@ module.exports = function(callback) {
   return metalsmith(__dirname)
     .metadata({
       site: config,
+      webpack: manifest,
       build_date: moment().format(),
       build_date_formatted: moment().format('LLLL'),
       revno: require('child_process')
-      .execSync('git rev-parse --short origin/master')
-      .toString().trim()
+        .execSync('git rev-parse --short origin/master')
+        .toString().trim()
     })
     .clean(false) // leave for gulp
     .source('./src')

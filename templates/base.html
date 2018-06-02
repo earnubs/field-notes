@@ -46,12 +46,11 @@
   </div>
 </div>
 
-<script src="/static/js/lib/moment.min.js"></script>
-<script src="/static/js/datetime.js"></script>
+<script src="/static/js/{{ webpack["main.js"] }}"></script>
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-    .register('/pwa.js', { scope: '/' })
+    .register('/{{ webpack["pwa.js"] }}', { scope: '/' })
       .then(() => {
         console.log("Service Worker Registered");
       })
