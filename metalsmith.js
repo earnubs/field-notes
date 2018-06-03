@@ -23,6 +23,15 @@ renderer.heading = function (text, level) {
   return `<h${level} id="${escapedText}"><a href="#${escapedText}">${text}</a></h${level}>`;
 };
 
+const imageRender = renderer.image;
+renderer.image = function (href, title, text) {
+  if (href.match(/youtube/)) {
+    return `<iframe width="700" height="436" src="${href}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+  } else {
+    return imageRender(href, title, text);
+  }
+};
+
 const config = require('./about.json');
 // we need webpack's build manifest to it's output to templates (main.js, etc)
 const manifest = require('./build/static/js/manifest.json');

@@ -10,11 +10,11 @@ following the UCI DH World Cup. In it he talks about line choice and track
 conditions plus other interesting news from each round. Here's his latest from
 Fortwilliam (Day 3)
 
-<iframe width="700" height="436" src="https://www.youtube.com/embed/er26f0eKuqA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+![](https://www.youtube.com/embed/er26f0eKuqA)
 
 As will be fairly evident when you watch that, Ben Cathro is from Scotland,
 which is where BKXC (who's from California, I think) was this week and
 posted this video of Innerleithen, a video which has really made me want to cross
 the channel for a wee day out in trails there, midges aside.
 
-<iframe width="700" height="436" src="https://www.youtube.com/embed/dySwIhLlp7s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+![](https://www.youtube.com/embed/dySwIhLlp7s)
