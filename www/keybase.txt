@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/earnubs
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://carisenda.com
+  * I am earnubs (https://keybase.io/earnubs) on keybase.
+  * I have a public key ASDf4O3J1rj_nt3Ct5n09bM6nNSpyguG6ikOmcymDAJ06wo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120dfe0edc9d6b8ff9eddc2b799f4f5b33a9cd4a9ca0b86ea290e99cca60c0274eb0a",
+      "host": "keybase.io",
+      "kid": "0120dfe0edc9d6b8ff9eddc2b799f4f5b33a9cd4a9ca0b86ea290e99cca60c0274eb0a",
+      "uid": "ad626a81a297cdaca95a28f2443c8119",
+      "username": "earnubs"
+    },
+    "merkle_root": {
+      "ctime": 1526833385,
+      "hash": "4d4dfa9555bdbef52e51fa5c0ab1cfb402108dce7e1c56fb5fceb3f40e87173c871fefb6643072a67705f7cfd38a7427bc2fa34c165af52bfdc1a31b9d72e683",
+      "hash_meta": "a2e8753330d9e5c62669fcfbb1be72b712b905ebcd7cfc909403b66e72ca88dd",
+      "seqno": 2838365
+    },
+    "service": {
+      "entropy": "pkux56oO2Otvz3iWjUfLM9qu",
+      "hostname": "carisenda.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.48"
+  },
+  "ctime": 1526833401,
+  "expire_in": 504576000,
+  "prev": "329587a402d7f4bed857e6908241624e2f9cfaadd59639c2447f56c868726a73",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg3+Dtyda4/57dwreZ9PWzOpzUqcoLhuopDpnMpgwCdOsKp3BheWxvYWTESpcCCcQgMpWHpALX9L7YV+aQgkFiTi+c+q3VljnCRH9WyGhyanPEIKVX3GVfUVjZJwM9OtjfExperiqChRsIxiX3oCK9YW6SAgHCo3NpZ8RAka5vkwKazZMT/unl2Eh/j+hE2yWoG1HTWlmln56v8pHChJ8ytxfLA/+1M68bB0Q8CD7AU4zKuoSDDcO/jYIjCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIF6KbrHYS303dMnoxCFudYCO8CuabxVaWc57dzQiahIyo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/earnubs
+
+==================================================================
