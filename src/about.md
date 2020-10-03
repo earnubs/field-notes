@@ -1,6 +1,6 @@
 ---
 title: About
-layout: page.html
+layout: page.njk
 ---
 
 A little bit about this blog...

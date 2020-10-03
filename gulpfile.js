@@ -1,5 +1,3 @@
-'use strict';
-
 const autoprefixer = require('autoprefixer');
 const concat = require('gulp-concat');
 const csso = require('postcss-csso');
@@ -8,6 +6,7 @@ const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const webpack = require('webpack');
 
+const metalsmith = require('./metalsmith.js');
 const config = require('./webpack.config.js');
 
 
@@ -24,9 +23,8 @@ function clean() {
   return del(['build']);
 }
 
-function blog(cb) {
-  const metalsmith = require('./metalsmith.js');
-  metalsmith(cb);
+function blog(done) {
+  metalsmith(done);
 }
 
 function images() {

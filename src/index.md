@@ -1,3 +1,3 @@
 ---
-layout: listing.html
+layout: listing.njk
 ---

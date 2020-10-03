@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'base.njk' %}
 {% block content %}
 {% for post in collections.posts %}
-{% include "_post.html" %}
+{% include "_post.njk" %}
 {% endfor %}
 {% endblock %}

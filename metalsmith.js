@@ -11,7 +11,6 @@ const markdown = require('metalsmith-markdown');
 const metalsmith = require('metalsmith');
 const minify = require('html-minifier').minify;
 const moment = require('moment');
-const nunjucks = require('nunjucks');
 const permalinks = require('metalsmith-permalinks');
 const sourcelink = require('metalsmith-source-link');
 const typography = require('metalsmith-typography');
@@ -35,8 +34,6 @@ renderer.image = function (href, title, text) {
 const config = require('./about.json');
 // we need webpack's build manifest to it's output to templates (main.js, etc)
 const manifest = require('./build/static/js/manifest.json');
-
-nunjucks.configure('./templates', {watch: false});
 
 module.exports = function(callback) {
   return metalsmith(__dirname)
@@ -90,11 +87,15 @@ module.exports = function(callback) {
     )
     .use(
       layouts({
-        engine: 'nunjucks',
-        default: 'base.html',
+        //engine: 'nunjucks',
+        default: 'base.njk',
         directory: 'templates',
         pattern: '**/*.html',
-        moment: moment
+        engineOptions: {
+          globals: {
+            moment
+          }
+        }
       })
     )
     .use((files, metalsmith, done) => {
