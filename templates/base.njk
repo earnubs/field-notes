@@ -49,14 +49,13 @@
 <script src="{{ webpack["main.js"] }}"></script>
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-    .register('{{ webpack["pwa.js"] }}', { scope: '/' })
-      .then(() => {
-        console.log("Service Worker Registered");
-      })
-      .catch((error) => {
-        console.log('Registration failed with ' + error);
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/static/js/service-worker.js').then(registration => {
+        console.info('SW registered: ', registration);
+      }).catch(registrationError => {
+        console.error('SW registration failed: ', registrationError);
       });
+    });
   }
 </script>
 </html>
