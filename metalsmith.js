@@ -1,4 +1,4 @@
-'use strict';
+const fs = require('fs');
 const beautify = require('js-beautify').html;
 const branch = require('metalsmith-branch');
 const collections = require('metalsmith-collections');
@@ -31,15 +31,11 @@ renderer.image = function (href, title, text) {
   }
 };
 
-const config = require('./about.json');
-// we need webpack's build manifest to it's output to templates (main.js, etc)
-const manifest = require('./build/static/js/manifest.json');
-
 module.exports = function(callback) {
   return metalsmith(__dirname)
     .metadata({
-      site: config,
-      webpack: manifest,
+      site: fs.readFileSync('./about.json'),
+      webpack: fs.readFileSync('./build/static/js/manifest.json'),
       build_date: moment().format(),
       build_date_formatted: moment().format('LLLL'),
       revno: require('child_process')
@@ -60,7 +56,9 @@ module.exports = function(callback) {
         return require('highlight.js').highlightAuto(code).value;
       }
     }))
-    .use(typography())
+    .use(typography({
+      lang: 'en'
+    }))
     .use(excerpts())
     .use(
       collections({
