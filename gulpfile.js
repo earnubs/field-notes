@@ -1,6 +1,5 @@
 const autoprefixer = require('autoprefixer');
 const concat = require('gulp-concat');
-const csso = require('postcss-csso');
 const del = require('del');
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
@@ -39,7 +38,9 @@ function fonts() {
 
 const cssProcessors = [
   autoprefixer(),
-  csso()
+  require('cssnano')({
+    preset: 'default',
+  }),
 ];
 
 function styles() {
