@@ -1,9 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const publicPath = path.resolve(__dirname, 'build/static/js/');
 
 module.exports = {
   mode: 'production',
@@ -11,27 +15,63 @@ module.exports = {
     main: './assets/scripts/index.js',
   },
   output: {
-    path: publicPath,
-    publicPath: '/static/js/',
+    path: path.resolve(__dirname, 'build/static'),
+    publicPath: '/static/',
     filename: '[name]-[chunkhash].js'
   },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserJSPlugin({}), new CssMinimizerPlugin()],
+  },
   plugins: [
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new MiniCssExtractPlugin({
+      filename: '[name]-[chunkhash].css',
+      chunkFilename: '[id].css',
+    }),
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'assets/fonts/*.woff2',
+          to: 'fonts/',
+          flatten: true,
+        }, {
+          from: 'assets/images/*',
+          to: 'img/',
+          flatten: true,
+        }, {
+          from: 'www/*',
+          to: path.resolve(__dirname, 'build/'),
+          flatten: true,
+        },
+      ],
+    }),
     new ManifestPlugin(),
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
-      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+      exclude: [/\.(?:json|txt)$/],
       runtimeCaching: [{
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+        urlPattern: /\.html$/,
         handler: 'CacheFirst',
         options: {
-          cacheName: 'images',
+          cacheName: 'html',
           expiration: {
-            maxEntries: 12,
+            maxAgeSeconds: 60 * 60 * 24,
           },
         },
       }],
     })
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
+      },
+    ],
+  }
 };

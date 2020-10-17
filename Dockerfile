@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:14-slim
 EXPOSE 8080
 
 WORKDIR /blog
