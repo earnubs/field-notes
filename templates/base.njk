@@ -6,11 +6,24 @@
 <meta name="description" content="{{ site.description }}">
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/png" href="/static/img/favicon.png">
-<link href="/static/css/all.css" rel="stylesheet">
+<link href="{{ webpack["main.css"] }}" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
+<style>
+@font-face {
+  font-family: "DIN";
+  font-weight: 300;
+  src: url("{{ webpack["fonts/DINWeb-Light.woff2"] }}") format("woff2");
+}
+
+@font-face {
+  font-family: "DIN";
+  font-weight: 700;
+  src: url("{{ webpack["fonts/DINWeb-Bold.woff2"] }}") format("woff2");
+}
+</style>
 <div class="b-layout__banner">
   <div class="b-layout__container">
-    <a class="b-layout__banner_wordmark" href="/">carisenda</a>
+    <a class="b-layout__banner_wordmark" href="/">{{ site.title }}</a>
   </div>
 </div>
 <div class="b-layout__content">
@@ -29,7 +42,7 @@
         {{ contents | safe }}
       </div>
       <div class="b-post__metadata">
-        <p>Published <span class="b-datetime_relative">{{ moment(publishedDate).format('x') }}</span>, <span class="b-datetime">{{ moment(publishedDate, 'YYYY-MM-DD HH:mm').format("ll") }}</span></p>
+        <p>Published <span class="b-datetime_relative">{{ publishedDate }}</span>; <span class="b-datetime">{{ format(parseISO(publishedDate), 'PPpp') }}</span></p>
         <p><a href="{{ sourceURL }}"><img src="/static/img/github.svg" width="16" height="16" alt="View source on Github"/></a></p>
       </div>
     </div>
@@ -40,9 +53,7 @@
   <div class="b-layout__container">
 
     <p><i>Absit iniuria verbis</i></p>
-    <p>Last build: {{ revno }}, <span class="b-datetime_relative">{{ moment(build_date).format('x') }}</span>,
-    {{ build_date_formatted }}
-  </p>
+    <p>Last build: {{ revno }}, <span class="b-datetime_relative">{{ build_date }}</span>; {{ build_date_formatted }}</p>
   </div>
 </div>
 
@@ -50,7 +61,9 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/static/js/service-worker.js').then(registration => {
+      navigator.serviceWorker.register('{{ webpack['service-worker.js'] }}', {
+        scope: '/'
+      }).then(registration => {
         console.info('SW registered: ', registration);
       }).catch(registrationError => {
         console.error('SW registration failed: ', registrationError);

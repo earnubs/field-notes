@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs');
 const beautify = require('js-beautify').html;
 const branch = require('metalsmith-branch');
@@ -6,11 +7,11 @@ const debug = require('metalsmith-debug');
 const drafts = require('metalsmith-drafts');
 const excerpts = require('metalsmith-excerpts');
 const layouts = require('metalsmith-layouts');
+const { format, formatISO, formatRelative, parseISO } = require('date-fns');
 const mark = require('marked');
 const markdown = require('metalsmith-markdown');
 const metalsmith = require('metalsmith');
 const minify = require('html-minifier').minify;
-const moment = require('moment');
 const permalinks = require('metalsmith-permalinks');
 const sourcelink = require('metalsmith-source-link');
 const typography = require('metalsmith-typography');
@@ -31,13 +32,15 @@ renderer.image = function (href, title, text) {
   }
 };
 
+const date = new Date();
+
 module.exports = function(callback) {
   return metalsmith(__dirname)
     .metadata({
-      site: fs.readFileSync('./about.json'),
-      webpack: fs.readFileSync('./build/static/js/manifest.json'),
-      build_date: moment().format(),
-      build_date_formatted: moment().format('LLLL'),
+      site: JSON.parse(fs.readFileSync(path.resolve(__dirname, './about.json'))),
+      webpack: JSON.parse(fs.readFileSync(path.resolve(__dirname, './build/static/manifest.json'))),
+      build_date: formatISO(date),
+      build_date_formatted: format(date, 'PPpp'),
       revno: require('child_process')
         .execSync('git rev-parse --short origin/master')
         .toString().trim()
@@ -91,7 +94,8 @@ module.exports = function(callback) {
         pattern: '**/*.html',
         engineOptions: {
           globals: {
-            moment
+            format,
+            parseISO
           }
         }
       })

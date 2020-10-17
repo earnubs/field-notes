@@ -2,24 +2,6 @@
  * @import url(https://static/fonts.googleapis.com/css?family=Inconsolata);
  **/
 
-@font-face {
-  font-family: "DIN";
-  font-weight: 300;
-  src: url("/static/font/DINWeb-Light.eot");
-  src: url("/static/font/DINWeb-Light.eot?#iefix") format("embedded-opentype"),
-    url("/static/font/DINWeb-Light.woff2") format("woff2"),
-    url("/static/font/DINWeb-Light.woff") format("woff");
-}
-
-@font-face {
-  font-family: "DIN";
-  font-weight: 700;
-  src: url("/static/font/DINWeb-Bold.eot");
-  src: url("/static/font/DINWeb-Bold.eot?#iefix") format("embedded-opentype"),
-    url("/static/font/DINWeb-Bold.woff2") format("woff2"),
-    url("/static/font/DINWeb-Bold.woff") format("woff");
-}
-
 :root {
   font: normal 300 16px/1.7 "Libre Baskerville", sans-serif;
   background-size: 15px;
@@ -63,8 +45,7 @@ kbd {
 
 .b-layout__banner {
   padding: 1rem 0;
-  background: #002b36;
-  border-bottom: 1px solid rgba(150, 173, 209, 0.8);
+  background: #5ee000;
 }
 
 .b-layout__banner_wordmark {
@@ -72,7 +53,7 @@ kbd {
   width: 100%;
   height: 10px;
   display: inline-block;
-  color: #ddd;
+  color: #002b36;
   text-transform: uppercase;
   letter-spacing: 2px;
 }

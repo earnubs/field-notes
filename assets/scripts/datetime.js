@@ -1,7 +1,7 @@
-import moment from 'moment';
+import { parseISO, formatDistanceToNow } from "date-fns";
 
 const datetimes = document.querySelectorAll('.b-datetime_relative');
 
 datetimes.forEach((node) => {
-  node.textContent = moment(node.textContent, 'x').fromNow();
+  node.textContent = formatDistanceToNow(parseISO(node.textContent)) + ' ago';
 });

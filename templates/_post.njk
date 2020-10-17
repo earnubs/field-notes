@@ -8,7 +8,7 @@
     {% if post.subline %}
     <h2 class="b-post__title_subline">{{ post.subline }}</h2>
     {% endif %}
-    <div class="b-post__metadata">Published <span class="b-datetime_relative">{{ moment(post.publishedDate).format('x') }}</span>, <span class="b-datetime">{{ moment(post.publishedDate, 'YYYY-MM-DD HH:mm').format("ll") }}</span>
+    <div class="b-post__metadata">Published <span class="b-datetime_relative">{{ post.publishedDate }}</span>; <span class="b-datetime">{{ format(parseISO(post.publishedDate), 'PPpp') }}</span>
     </div>
   </div>
 </div>
