@@ -24,7 +24,7 @@
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^9.0.0",
-    "highlight.js": "^10.2.0",
+    "highlight.js": "^10.4.1",
     "html-minifier": "^4.0.0",
     "http-server": "^0.12.3",
     "js-beautify": "^1.13.0",
